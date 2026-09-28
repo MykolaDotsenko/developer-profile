@@ -1640,3 +1640,366 @@ h2,
     color: CanvasText;
   }
 }
+
+
+/* ==========================================================================
+   Compact Irish editorial + subtle Celtic linework
+   ========================================================================== */
+
+:root {
+  --content-width: 1080px;
+}
+
+.container {
+  width: min(calc(100% - 2rem), var(--content-width));
+}
+
+.nav-shell {
+  min-height: 56px;
+}
+
+.primary-nav {
+  gap: 1.05rem;
+}
+
+.site-header .button {
+  min-height: 34px;
+  padding: 0.4rem 0.68rem;
+}
+
+.hero {
+  min-height: auto;
+  padding: clamp(2.5rem, 5vw, 4.25rem) 0 clamp(2.35rem, 4.5vw, 3.8rem);
+}
+
+.hero-grid {
+  grid-template-columns: minmax(0, 1.55fr) minmax(240px, 0.45fr);
+  gap: clamp(1.75rem, 4.5vw, 3.6rem);
+}
+
+h1 {
+  font-size: clamp(3.25rem, 7vw, 6.2rem);
+}
+
+.hero-statement {
+  max-width: 17ch;
+  margin-bottom: 0.95rem;
+  font-size: clamp(1.7rem, 3.5vw, 2.8rem);
+}
+
+.lede {
+  max-width: 61ch;
+  margin-bottom: 1.15rem;
+  font-size: clamp(0.96rem, 1.25vw, 1.08rem);
+}
+
+.hero-actions {
+  gap: 0.65rem;
+}
+
+.button {
+  min-height: 36px;
+  padding: 0.48rem 0.72rem;
+  font-size: 0.84rem;
+}
+
+.profile-card {
+  gap: 0.7rem;
+  padding-left: 1.15rem;
+}
+
+.avatar {
+  max-height: 340px;
+}
+
+.profile-facts div {
+  grid-template-columns: 80px minmax(0, 1fr);
+  padding: 0.5rem 0;
+}
+
+.profile-facts dd {
+  font-size: 0.83rem;
+}
+
+.profile-title {
+  font-size: 1.2rem;
+}
+
+.section {
+  padding: clamp(2.4rem, 4.5vw, 3.8rem) 0;
+}
+
+.section-grid {
+  grid-template-columns: minmax(200px, 0.58fr) minmax(0, 1.42fr);
+  gap: clamp(1.6rem, 4.5vw, 3.5rem);
+}
+
+.section-heading {
+  margin-bottom: 1.05rem;
+  padding-bottom: 0.62rem;
+}
+
+.section-heading h2,
+.section-grid h2 {
+  margin-top: 0.35rem;
+  font-size: clamp(1.75rem, 3.5vw, 3.1rem);
+}
+
+.prose {
+  font-size: 0.96rem;
+}
+
+.timeline-card {
+  grid-template-columns: 145px minmax(0, 1fr);
+  gap: 1.45rem;
+  padding: 1.05rem 0 1.15rem;
+}
+
+.timeline-card:hover {
+  padding-left: 0.3rem;
+}
+
+.timeline-summary,
+.bullet-list {
+  font-size: 0.92rem;
+}
+
+.bullet-list {
+  margin-top: 0.72rem;
+}
+
+.bullet-list li + li {
+  margin-top: 0.3rem;
+}
+
+.project-grid {
+  gap: 0 1.35rem;
+}
+
+.project-card {
+  padding: 0.95rem 0 1.05rem;
+}
+
+.project-card:nth-child(odd):not(.project-card-featured) {
+  padding-right: 0.7rem;
+}
+
+.project-card:nth-child(even) {
+  padding-left: 1.35rem;
+}
+
+.project-card:not(.project-card-featured):hover {
+  padding-left: 0.35rem;
+}
+
+.project-card:nth-child(even):not(.project-card-featured):hover {
+  padding-left: 1.7rem;
+}
+
+.project-card-topline {
+  margin-bottom: 0.55rem;
+  font-size: 0.72rem;
+}
+
+.project-card h3 {
+  margin-bottom: 0.4rem;
+  font-size: 1.42rem;
+}
+
+.project-card > p {
+  margin-bottom: 0.6rem;
+  font-size: 0.92rem;
+}
+
+.project-card .tag-list {
+  margin: 0.55rem 0 0.72rem;
+}
+
+.project-card-featured {
+  grid-template-columns: minmax(0, 1.2fr) minmax(270px, 0.8fr);
+  gap: clamp(1.25rem, 3.5vw, 2.8rem);
+  padding: 1.05rem 0 1.35rem 1rem;
+}
+
+.project-proof {
+  padding-left: 1rem;
+}
+
+.project-proof dl div {
+  padding: 0.58rem 0;
+}
+
+.project-proof dd {
+  font-size: 0.84rem;
+}
+
+.project-visual {
+  margin-top: 0.7rem;
+}
+
+.skill-card {
+  padding-top: 0.85rem;
+}
+
+.skill-card + .skill-card {
+  padding-left: 0.78rem;
+}
+
+.skill-card h3 {
+  margin-bottom: 0.35rem;
+  font-size: 1rem;
+}
+
+.skill-card p {
+  font-size: 0.84rem;
+}
+
+.contact-card {
+  gap: 1.4rem;
+  padding: clamp(1.2rem, 3vw, 1.8rem);
+}
+
+.site-footer {
+  padding: 1rem 0 1.35rem;
+}
+
+/* A restrained interlace motif inspired by Celtic manuscript borders.
+   It stays geometric and abstract rather than using literal icons. */
+.hero::before,
+.contact-card::before {
+  background:
+    linear-gradient(45deg, transparent 42%, var(--brass) 42% 50%, transparent 50% 58%, var(--irish-green) 58% 66%, transparent 66%) 0 0 / 22px 8px repeat-x,
+    linear-gradient(-45deg, transparent 42%, var(--irish-green) 42% 50%, transparent 50% 58%, var(--brass) 58% 66%, transparent 66%) 11px 0 / 22px 8px repeat-x;
+}
+
+.hero::before {
+  width: min(30vw, 320px);
+  height: 8px;
+}
+
+.contact-card::before {
+  width: 132px;
+  height: 8px;
+}
+
+.section-heading::before {
+  position: absolute;
+  top: 0.18rem;
+  right: 0;
+  width: 42px;
+  height: 10px;
+  background:
+    linear-gradient(45deg, transparent 38%, var(--brass) 38% 49%, transparent 49% 60%, var(--irish-green) 60% 71%, transparent 71%) 0 0 / 14px 10px repeat-x,
+    linear-gradient(-45deg, transparent 38%, var(--irish-green) 38% 49%, transparent 49% 60%, var(--brass) 60% 71%, transparent 71%) 7px 0 / 14px 10px repeat-x;
+  content: "";
+  opacity: 0.9;
+}
+
+.section-heading::after {
+  width: min(22%, 145px);
+}
+
+.profile-card::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 34px;
+  height: 34px;
+  border-right: 1px solid rgba(176, 138, 74, 0.62);
+  border-bottom: 1px solid rgba(176, 138, 74, 0.62);
+  content: "";
+  transform: translate(6px, 6px);
+}
+
+.project-card-featured::before {
+  position: absolute;
+  top: 0.72rem;
+  right: 0.25rem;
+  width: 30px;
+  height: 30px;
+  border-top: 1px solid rgba(176, 138, 74, 0.7);
+  border-right: 1px solid rgba(176, 138, 74, 0.7);
+  content: "";
+}
+
+@media (min-width: 901px) {
+  .section-grid > :first-child {
+    top: 78px;
+  }
+}
+
+@media (max-width: 900px) {
+  .section {
+    padding: 2.2rem 0;
+  }
+
+  .profile-card {
+    gap: 0.8rem;
+  }
+
+  .profile-card::after,
+  .section-heading::before {
+    display: none;
+  }
+
+  .project-card-featured {
+    padding-left: 0;
+  }
+
+  .project-card:nth-child(even):not(.project-card-featured):hover,
+  .project-card:not(.project-card-featured):hover {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 720px) {
+  .container {
+    width: min(calc(100% - 1.25rem), var(--content-width));
+  }
+
+  .nav-shell {
+    min-height: 52px;
+  }
+
+  .hero {
+    padding: 2rem 0 2.2rem;
+  }
+
+  h1 {
+    font-size: clamp(2.9rem, 16vw, 4.5rem);
+  }
+
+  .hero-statement {
+    font-size: clamp(1.6rem, 8vw, 2.45rem);
+  }
+
+  .avatar {
+    max-width: 300px;
+    max-height: 310px;
+  }
+
+  .section {
+    padding: 1.9rem 0;
+  }
+
+  .section-heading {
+    margin-bottom: 0.85rem;
+  }
+
+  .timeline-card {
+    padding: 0.85rem 0 0.95rem;
+  }
+
+  .project-card {
+    padding: 0.85rem 0 0.95rem;
+  }
+
+  .project-card-featured {
+    padding-top: 0.85rem;
+    padding-bottom: 1rem;
+  }
+
+  .contact-card {
+    padding: 1.1rem;
+  }
+}

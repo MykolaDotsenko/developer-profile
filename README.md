@@ -111,6 +111,13 @@ A railway-booking case study with segment-aware inventory, database-enforced con
 
 An explainable decision-support workspace that deliberately separates deterministic preference score, evidence confidence, and sensitivity. AI can structure or challenge a decision, but never becomes the ranking engine.
 
+### [DayDock](https://github.com/MykolaDotsenko/daydock)
+
+**React · TypeScript · Local-first**
+
+A workday planner for capture, priorities, focus blocks, follow-ups, and daily review. Personal planning data stays in the browser, with a live demo at https://mykoladotsenko.github.io/daydock/.
+
+
 ## Product thinking
 
 The project themes are intentionally different, but the product logic is consistent.

@@ -1245,3 +1245,398 @@ h2,
     transform: none !important;
   }
 }
+
+
+/* ==========================================================================
+   Contemporary Irish premium identity
+   ========================================================================== */
+
+:root {
+  --paper: #f3f0e7;
+  --paper-deep: #e6dfd0;
+  --ink: #15201a;
+  --muted: #59635b;
+  --faint: #788077;
+  --rule: #c9c2b3;
+  --rule-dark: #747064;
+  --accent: #b08a4a;
+  --accent-dark: #826334;
+  --white: #fffdf7;
+
+  --irish-green: #123b2d;
+  --irish-green-deep: #0b2b20;
+  --irish-green-soft: #dce5dc;
+  --sage: #8ea38f;
+  --brass: #b08a4a;
+  --brass-soft: #d7c49b;
+  --limestone: #f3f0e7;
+}
+
+::selection {
+  background: var(--brass-soft);
+  color: var(--irish-green-deep);
+}
+
+body {
+  color: var(--ink);
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(18, 59, 45, 0.018) 0,
+      rgba(18, 59, 45, 0.018) 1px,
+      transparent 1px,
+      transparent 5px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(176, 138, 74, 0.012) 0,
+      rgba(176, 138, 74, 0.012) 1px,
+      transparent 1px,
+      transparent 7px
+    ),
+    var(--limestone);
+  background-size: auto;
+}
+
+.site-header {
+  border-bottom-color: rgba(215, 196, 155, 0.4);
+  background: rgba(18, 59, 45, 0.96);
+  color: var(--white);
+  box-shadow: 0 8px 28px rgba(11, 43, 32, 0.11);
+  backdrop-filter: blur(14px) saturate(120%);
+  -webkit-backdrop-filter: blur(14px) saturate(120%);
+}
+
+.brand {
+  color: var(--white);
+}
+
+.brand::after {
+  content: "◆";
+  margin-left: 0.42rem;
+  color: var(--brass);
+  font-family: var(--sans-ui);
+  font-size: 0.55em;
+  transform: translateY(-0.05em);
+}
+
+.primary-nav a {
+  color: #dce7df;
+}
+
+.primary-nav a:hover {
+  color: var(--white);
+}
+
+.primary-nav a::after {
+  background: var(--brass);
+}
+
+.site-header .button {
+  border-color: var(--brass);
+  background: var(--brass);
+  color: var(--irish-green-deep);
+}
+
+.site-header .button:hover {
+  border-color: #c39c58;
+  background: #c39c58;
+  color: var(--irish-green-deep);
+}
+
+.hero {
+  border-bottom-color: var(--rule-dark);
+  background:
+    linear-gradient(110deg, rgba(255, 253, 247, 0.66), rgba(243, 240, 231, 0.22) 48%, rgba(220, 229, 220, 0.26)),
+    transparent;
+}
+
+.hero::before {
+  width: min(34vw, 390px);
+  height: 4px;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      var(--brass) 0 34px,
+      transparent 34px 43px,
+      var(--irish-green) 43px 77px,
+      transparent 77px 86px
+    );
+}
+
+.hero::after {
+  top: 9%;
+  right: -6%;
+  width: min(33vw, 390px);
+  border-color: rgba(18, 59, 45, 0.18);
+  box-shadow:
+    34px 34px 0 -33px rgba(176, 138, 74, 0.42),
+    -34px -34px 0 -33px rgba(18, 59, 45, 0.18);
+  transform: rotate(9deg);
+}
+
+.eyebrow,
+.section-kicker,
+.profile-label,
+.project-type,
+.timeline-date,
+.proof-kicker {
+  color: var(--irish-green);
+}
+
+.accent-text {
+  color: var(--irish-green);
+}
+
+h1,
+h2,
+.hero-statement,
+.profile-title,
+.project-card h3,
+.skill-card h3,
+.project-proof dt {
+  color: var(--irish-green-deep);
+}
+
+.lede,
+.prose,
+.timeline-meta p:last-child,
+.timeline-summary,
+.bullet-list,
+.project-card > p,
+.project-proof dd,
+.skill-card p,
+.profile-facts dd {
+  color: var(--muted);
+}
+
+.button {
+  border-color: var(--irish-green);
+  background: var(--irish-green);
+  color: var(--white);
+}
+
+.button:hover {
+  border-color: var(--irish-green-deep);
+  background: var(--irish-green-deep);
+}
+
+.button-secondary {
+  border-color: var(--irish-green);
+  background: transparent;
+  color: var(--irish-green);
+}
+
+.button-secondary:hover {
+  border-color: var(--brass);
+  background: rgba(176, 138, 74, 0.11);
+  color: var(--irish-green-deep);
+}
+
+.text-link,
+.project-links a,
+.footer-link {
+  color: var(--irish-green-deep);
+}
+
+.text-link:hover,
+.project-links a:hover,
+.footer-link:hover {
+  color: var(--accent-dark);
+}
+
+.profile-card::before {
+  background: linear-gradient(
+    to bottom,
+    var(--brass) 0 18%,
+    var(--irish-green) 18% 62%,
+    var(--rule) 62%
+  );
+}
+
+.avatar {
+  outline: 1px solid rgba(176, 138, 74, 0.68);
+  outline-offset: 6px;
+  box-shadow:
+    0 28px 70px rgba(11, 43, 32, 0.17),
+    0 1px 0 rgba(255, 255, 255, 0.82) inset;
+}
+
+.profile-title {
+  color: var(--irish-green-deep);
+}
+
+.profile-facts dt {
+  color: var(--accent-dark);
+}
+
+.tag-list span {
+  color: #526057;
+}
+
+.tag-list span:not(:last-child)::after {
+  color: var(--brass);
+}
+
+.section::before {
+  height: 2px;
+  background: var(--brass);
+}
+
+.section-muted {
+  background:
+    linear-gradient(90deg, rgba(220, 229, 220, 0.62), rgba(243, 240, 231, 0.72));
+}
+
+.section-heading {
+  border-bottom-color: var(--rule-dark);
+}
+
+.section-heading::after {
+  background: var(--irish-green);
+}
+
+.timeline-card:hover {
+  background: rgba(18, 59, 45, 0.045);
+}
+
+.bullet-list li::marker {
+  color: var(--brass);
+}
+
+.project-grid {
+  border-top-color: var(--irish-green);
+}
+
+.project-card {
+  border-bottom-color: var(--rule);
+}
+
+.project-card:nth-child(even) {
+  border-left-color: var(--rule);
+}
+
+.project-card:hover,
+.project-card:focus-within {
+  background: rgba(18, 59, 45, 0.045);
+}
+
+.project-card-topline > span:last-child {
+  color: var(--brass);
+}
+
+.project-card:hover .project-card-topline > span:last-child {
+  color: var(--irish-green);
+}
+
+.project-card-featured {
+  background:
+    linear-gradient(90deg, rgba(220, 229, 220, 0.5), rgba(255, 253, 247, 0.34));
+  box-shadow: inset 3px 0 0 var(--brass);
+}
+
+.project-visual img {
+  border-color: rgba(18, 59, 45, 0.28);
+  box-shadow: 0 20px 46px rgba(11, 43, 32, 0.11);
+}
+
+.project-proof {
+  border-left-color: var(--brass);
+  background: rgba(255, 253, 247, 0.56);
+}
+
+.project-proof dl div {
+  border-top-color: var(--rule);
+}
+
+.skill-grid {
+  border-top-color: var(--irish-green);
+}
+
+.skill-card {
+  border-right-color: var(--rule);
+}
+
+.skill-card:hover {
+  background: rgba(18, 59, 45, 0.04);
+}
+
+.contact-card {
+  border-color: var(--irish-green-deep);
+  background:
+    linear-gradient(118deg, var(--irish-green-deep), var(--irish-green) 62%, #1b4938);
+  color: var(--white);
+  box-shadow: 0 26px 60px rgba(11, 43, 32, 0.2);
+}
+
+.contact-card::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 118px;
+  height: 4px;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      var(--brass) 0 24px,
+      transparent 24px 31px
+    );
+  content: "";
+}
+
+.contact-card::after {
+  border-color: rgba(215, 196, 155, 0.28);
+  box-shadow:
+    -36px -36px 0 -35px rgba(215, 196, 155, 0.2),
+    36px 36px 0 -35px rgba(255, 253, 247, 0.09);
+}
+
+.contact-card .section-kicker {
+  color: var(--brass-soft);
+}
+
+.contact-card p:not(.section-kicker) {
+  color: #dfe9e1;
+}
+
+.contact-card .button-secondary {
+  border-color: var(--brass-soft);
+  color: var(--white);
+}
+
+.contact-card .button-secondary:hover {
+  border-color: var(--brass);
+  background: var(--brass);
+  color: var(--irish-green-deep);
+}
+
+.site-footer {
+  color: #59655d;
+}
+
+.footer-link {
+  color: var(--irish-green);
+}
+
+@media (max-width: 900px) {
+  .profile-card {
+    border-top-color: var(--brass);
+  }
+}
+
+@media (max-width: 720px) {
+  .primary-nav {
+    border-top-color: rgba(215, 196, 155, 0.3);
+  }
+
+  .avatar {
+    outline-offset: 4px;
+  }
+}
+
+@media (forced-colors: active) {
+  .site-header {
+    background: Canvas;
+    color: CanvasText;
+  }
+}

@@ -7,7 +7,7 @@
     <title>Mykola Dotsenko — Software Engineer Resume</title>
     <meta
       name="description"
-      content="Mykola Dotsenko — backend and data-focused Software Engineer with Python/Django, production integrations, data reconciliation, AI-enabled systems, and full-stack delivery experience.">
+      content="Mykola Dotsenko — Software Engineer working mainly with Python/Django, PostgreSQL, data integrations, production debugging, and full-stack web development.">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#f4f7fb">
     <link
@@ -37,7 +37,7 @@
       <article class="resume-page resume-page-one" aria-label="Resume page 1">
         <header class="cv-header">
           <div>
-            <p class="role-line">Software Engineer · Backend · Data · AI Integrations</p>
+            <p class="role-line">Software Engineer · Python/Django · Backend &amp; Data Integrations</p>
             <h1>Mykola Dotsenko</h1>
             <p class="location">Turku, Finland</p>
           </div>
@@ -52,18 +52,17 @@
         <section class="cv-section summary-section" aria-labelledby="summary-heading">
           <h2 id="summary-heading">Profile</h2>
           <p class="profile-summary">
-            Backend/data-focused Software Engineer with 2+ years of production software
-            development experience, strongest in Python/Django, multi-source integrations,
-            data reconciliation, production reliability, and AI-enabled product workflows.
-            Experienced in systems where incorrect data can still look valid: duplicate
-            identities, stale sources, partial synchronization, user overrides, and recovery
-            after failures. Comfortable across the frontend with React, Next.js, TypeScript,
-            HTMX, and accessible web delivery.
+            Software Engineer with 2+ years of production web-development experience.
+            Most of my recent work is Python/Django backend, PostgreSQL, CRM and data
+            integrations, search, document flows, and production fixes. I have worked on
+            Kivi/OviPro/HubSpot data around 200k contacts, including identity matching and
+            reconciliation where a wrong merge can look valid until it reaches a user.
+            I also work with React, Next.js, TypeScript, and HTMX when a feature needs frontend work.
           </p>
           <p class="profile-summary profile-summary-secondary">
-            Brings 8+ years of earlier experience across agriculture, agribusiness,
-            greenhouse/food production, accounting, and sales — useful domain depth for
-            AgTech and other operational, data-heavy products.
+            Before software I spent 8+ years in agriculture, agribusiness, greenhouse and
+            food production, accounting, and sales. That background is especially useful
+            for AgTech and other software tied closely to day-to-day operations.
           </p>
 
           <div class="impact-strip">
@@ -74,13 +73,13 @@
         </section>
 
         <section class="cv-section" aria-labelledby="strengths-heading">
-          <h2 id="strengths-heading">Core strengths</h2>
+          <h2 id="strengths-heading">Tools I use</h2>
           <div class="skills-rows">
             <p><strong>Backend:</strong> Python, Django, Django REST Framework, Wagtail, REST APIs, C# / ASP.NET Core</p>
-            <p><strong>Data &amp; integrations:</strong> PostgreSQL, SQL, Django ORM, ETL-style pipelines, reconciliation, identity resolution, idempotency, external APIs, caching</p>
+            <p><strong>Data &amp; integrations:</strong> PostgreSQL, SQL, Django ORM, CRM sync, reconciliation, identity matching, import jobs, external APIs, caching</p>
             <p><strong>Frontend:</strong> React, Next.js, TypeScript, JavaScript, HTMX, Tailwind CSS, semantic HTML/CSS</p>
-            <p><strong>Quality &amp; delivery:</strong> Django/pytest-style testing, Playwright, Vitest, Ruff, mypy, GitHub Actions, Docker, CI/CD, production diagnostics</p>
-            <p><strong>AI-enabled systems:</strong> LLM integration, prompt/output validation, retries, deterministic fallbacks, human-confirmation boundaries</p>
+            <p><strong>Testing &amp; delivery:</strong> Django tests, Playwright, Vitest, Ruff, mypy, GitHub Actions, Docker, CI/CD, production debugging</p>
+            <p><strong>AI features:</strong> LLM APIs, prompt/output checks, retries, fallback logic, user confirmation where needed</p>
           </div>
         </section>
 
@@ -100,28 +99,26 @@
             </header>
             <ul>
               <li>
-                Built and evolved a multi-source CRM golden customer view across Kivi,
-                OviPro, and HubSpot at roughly <strong>200k-record scale</strong>, using
-                conservative identity resolution, ambiguity handling, review workflows,
-                and idempotent ingestion.
+                Built and maintained a CRM golden customer view across Kivi, OviPro, and
+                HubSpot at roughly <strong>200k-record scale</strong>. Ambiguous identity
+                matches go to review instead of being merged automatically.
               </li>
               <li>
-                Designed source-aware synchronization and reconciliation logic for
-                correctness-critical customer, property, and document workflows; investigated
-                production incidents with read-only data probes before changing behavior.
+                Worked on customer, property, and document synchronization. When data was
+                missing or stale, I checked the source records and affected scope first,
+                then changed the sync logic after the cause was clear.
               </li>
               <li>
-                Improved a key search flow from <strong>3.5s to ~300ms</strong> through
-                query-path and ORM optimization, including better relationship loading,
-                bounded candidate sets, and caching where justified.
+                Cut one search path from <strong>3.5s to ~300ms</strong> by changing the
+                query structure, relationship loading, candidate limits, and caching.
               </li>
               <li>
-                Worked across Django/Wagtail/DRF, PostgreSQL/SQL, HTMX, JavaScript, Tailwind,
-                PDF/document workflows, external APIs, and AI-enabled product features.
+                Shipped Django/Wagtail/DRF, PostgreSQL, HTMX, JavaScript, Tailwind,
+                PDF/document, external API, and AI-assisted features in the same product.
               </li>
               <li>
-                Used automated tests, static/type checks, dry runs, production-like datasets,
-                rollback-aware changes, and explicit failure paths to reduce blast radius.
+                For risky sync and data changes, used tests, dry runs, real data checks,
+                and rollback steps before turning the new behavior on.
               </li>
             </ul>
           </article>
@@ -136,8 +133,8 @@
             </header>
             <ul>
               <li>
-                Delivered SaaS features with Next.js and TypeScript, including reusable UI,
-                PostgreSQL/Supabase-backed workflows, and full-text/semantic search exploration.
+                Built SaaS features with Next.js and TypeScript, including reusable UI,
+                PostgreSQL/Supabase workflows, and full-text/semantic search experiments.
               </li>
             </ul>
           </article>
@@ -152,8 +149,8 @@
             </header>
             <ul>
               <li>
-                Built CRM frontend workflows with React, TanStack Query/Table, REST APIs,
-                responsive UI, edge-case handling, and Playwright end-to-end testing.
+                Built CRM screens with React and TanStack Query/Table, connected them to
+                REST APIs, handled loading/error edge cases, and added Playwright E2E tests.
               </li>
             </ul>
           </article>
@@ -173,9 +170,8 @@
               <p class="job-date">Mar 2024 — Nov 2024</p>
             </header>
             <p>
-              Full-stack training and project work with Next.js, TypeScript, tRPC, Prisma,
-              authentication, AWS basics, testing, deployment, Agile/Scrum, and Finnish
-              work-life language training.
+              Full-stack project work with Next.js, TypeScript, tRPC, Prisma, authentication,
+              testing, deployment, AWS basics, Agile/Scrum, and Finnish work-life training.
             </p>
           </article>
 
@@ -188,8 +184,8 @@
               <p class="job-date">Jul 2023 — Mar 2024</p>
             </header>
             <p>
-              Responsive React interfaces, REST API integration, loading/error states,
-              mobile adaptation, and accessibility fundamentals.
+              React interfaces, REST API integration, loading/error states, mobile layouts,
+              and basic accessibility work for freelance clients.
             </p>
           </article>
         </section>
@@ -204,52 +200,49 @@
             <article>
               <h3>DomoNest <span>Python · Django · Wagtail · PostgreSQL</span></h3>
               <p>
-                Household operating system built around cross-domain workflows rather than
-                isolated CRUD: derived Today read model, deterministic recurrence, database
-                invariants, idempotent Recipe/Pantry → Shopping writes, owner-scoped private
-                state, and server-rendered progressive enhancement.
+                A Django household app where pantry, recipes, shopping, and recurring tasks
+                share data. Database constraints and derived views keep those features from
+                drifting apart as the app grows.
               </p>
             </article>
 
             <article>
               <h3>Cultural Currency Converter <span>Django · PostgreSQL · HTMX · Redis</span></h3>
               <p>
-                Travel-money product with explicit source/effective-date semantics,
-                provider boundaries, historical FX, provenance-aware context, optional AI
-                explanation, safe degradation, browser QA, backup/restore, and runtime health
-                checks.
+                A travel-money app with current and historical FX rates. It keeps the source
+                and effective date visible, and the core conversion still works when optional
+                AI or enrichment providers are unavailable.
               </p>
             </article>
 
             <article>
               <h3>Shopping Budget Companion <span>React · TypeScript · Zod · PWA</span></h3>
               <p>
-                Local-first exact-money product with integer minor-unit arithmetic,
-                versioned recovery-safe persistence, offline operation, barcode/OCR/on-device
-                visual recognition adapters, explicit user confirmation, and cross-browser
-                accessibility/E2E gates.
+                A local-first shopping budget PWA. Money is stored in integer minor units,
+                browser data is versioned, and barcode/OCR/image recognition can suggest a
+                value but cannot add it to the cart without confirmation.
               </p>
             </article>
 
             <article>
               <h3>JunaLippu <span>Next.js · TypeScript · tRPC · Prisma</span></h3>
               <p>
-                Railway booking case study with segment-aware inventory, database-enforced
-                concurrency safety, owner-scoped reservations, integration tests, and GTFS
-                edge-case handling.
+                A Finnish rail-booking demo where seat availability is tracked by route
+                segment. A database constraint protects against two users booking the same
+                segment at the same time.
               </p>
             </article>
           </div>
         </section>
 
         <section class="cv-section" aria-labelledby="approach-heading">
-          <h2 id="approach-heading">Engineering approach</h2>
+          <h2 id="approach-heading">How I work</h2>
           <ul class="approach-list">
-            <li><strong>Evidence before fixes:</strong> reproduce, trace authoritative data, quantify impact, then change the smallest necessary boundary.</li>
-            <li><strong>Correctness over convenient guesses:</strong> keep ambiguity explicit, validate external data, and prefer safe fallbacks to plausible-but-wrong state.</li>
-            <li><strong>Proportional architecture:</strong> add frameworks, services, state libraries, or AI only when the product requirement earns the complexity.</li>
-            <li><strong>Recoverable systems:</strong> design writes to be retryable/idempotent, preserve last-known-good state where appropriate, and make failure visible.</li>
-            <li><strong>AI as an interface layer:</strong> deterministic business rules remain authoritative; model output is validated, bounded, and replaceable.</li>
+            <li>When production data looks wrong, I check the source records and trace the flow before changing code.</li>
+            <li>I keep uncertain identity matches out of automatic merges and send them to review instead.</li>
+            <li>I try to make sync and import jobs safe to run again after a partial failure.</li>
+            <li>I prefer the existing framework and a small change over adding another service or library without a clear need.</li>
+            <li>For AI features, model output is checked before it can affect business data or user-facing limits.</li>
           </ul>
         </section>
 
@@ -277,16 +270,15 @@
         <section class="cv-section background-section" aria-labelledby="background-heading">
           <h2 id="background-heading">Domain background</h2>
           <p>
-            8+ years across agriculture, agribusiness, greenhouse/food production,
-            accounting, sales, and operational environments. This background strengthens
-            requirements analysis and product judgment for AgTech, vertical SaaS, and
-            business systems where software has to match real operating processes.
+            8+ years across agriculture, agribusiness, greenhouse and food production,
+            accounting, sales, and customer-facing work. It helps when software has to fit
+            an actual operating process rather than a clean diagram.
           </p>
         </section>
 
         <footer class="cv-footer">
           <span>Mykola Dotsenko · Software Engineer</span>
-          <span>Python/Django · Backend · Data · AI Integrations</span>
+          <span>Python/Django · Backend · Data Integrations</span>
         </footer>
       </article>
     </main>

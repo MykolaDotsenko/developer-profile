@@ -230,40 +230,33 @@
             <article class="project-card project-card-featured">
               <div class="featured-project-copy">
                 <div class="project-card-topline">
-                  <span class="project-type">Featured · React · TypeScript</span>
+                  <span class="project-type">Featured · Python · Django</span>
                   <span aria-hidden="true">01</span>
                 </div>
-                <h3>Pizzeria</h3>
+                <h3>Cultural Currency Converter</h3>
                 <p>
-                  Production-minded CRUD application built around explicit runtime
-                  boundaries, durable client-side persistence, accessible forms,
-                  automated tests, and CI.
+                  Django-first travel-money product built around trustworthy FX semantics,
+                  external-provider boundaries, provenance-aware context, and graceful
+                  degradation when optional enrichment or AI is unavailable.
                 </p>
 
                 <figure class="project-visual">
                   <img
-                    src="pizzeria-preview.jpg"
-                    alt="Pizza image used in the Pizzeria project interface">
-                  <figcaption>Real visual asset from the live Pizzeria project.</figcaption>
+                    src="https://raw.githubusercontent.com/MykolaDotsenko/cultural-currency-converter-/master/docs/assets/cultural-currency-converter-overview.webp"
+                    alt="Cultural Currency Converter interface showing a currency conversion result and local-value context">
+                  <figcaption>Current interface from the real Django application.</figcaption>
                 </figure>
 
                 <div class="tag-list">
-                  <span>React</span>
-                  <span>TypeScript</span>
-                  <span>Zod</span>
-                  <span>Vitest</span>
-                  <span>CI</span>
+                  <span>Python</span>
+                  <span>Django</span>
+                  <span>PostgreSQL</span>
+                  <span>HTMX</span>
+                  <span>Playwright</span>
                 </div>
                 <div class="project-links">
                   <a
-                    href="https://pizza-react-typescript.vercel.app"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Live demo ↗
-                  </a>
-                  <a
-                    href="https://github.com/MykolaDotsenko/Pizzeria-React-Typescript-Project"
+                    href="https://github.com/MykolaDotsenko/cultural-currency-converter-"
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -272,20 +265,20 @@
                 </div>
               </div>
 
-              <aside class="project-proof" aria-label="Pizzeria engineering proof">
+              <aside class="project-proof" aria-label="Cultural Currency Converter engineering proof">
                 <p class="proof-kicker">Engineering proof</p>
                 <dl>
                   <div>
-                    <dt>Runtime safety</dt>
-                    <dd>Zod validation protects form and persisted data boundaries.</dd>
+                    <dt>Data semantics</dt>
+                    <dd>Current and historical FX keep source and effective-date meaning explicit.</dd>
                   </div>
                   <div>
-                    <dt>Persistence</dt>
-                    <dd>Versioned repository with migration and deduplication paths.</dd>
+                    <dt>Failure model</dt>
+                    <dd>Core conversion remains useful when optional media, enrichment, or AI fails.</dd>
                   </div>
                   <div>
                     <dt>Quality</dt>
-                    <dd>Vitest, Testing Library, and GitHub Actions guard regressions.</dd>
+                    <dd>Provider boundaries, PostgreSQL, browser checks, accessibility, backup and restore tooling.</dd>
                   </div>
                 </dl>
               </aside>
@@ -293,24 +286,25 @@
 
             <article class="project-card project-card-compact">
               <div class="project-card-topline">
-                <span class="project-type">Python · Django</span>
+                <span class="project-type">Python · Django · Wagtail</span>
                 <span aria-hidden="true">02</span>
               </div>
-              <h3>MovieShelf</h3>
+              <h3>DomoNest</h3>
               <p>
-                Django movie catalog with relational modeling, authentication, search,
-                media handling, automated tests, Ruff checks, and GitHub Actions CI.
+                Household operating system with cross-domain workflows, owner-scoped
+                private state, database invariants, idempotent writes, deterministic
+                recurrence, and server-rendered progressive enhancement.
               </p>
               <div class="tag-list">
                 <span>Python</span>
                 <span>Django</span>
-                <span>SQLite</span>
-                <span>Ruff</span>
-                <span>CI</span>
+                <span>Wagtail</span>
+                <span>PostgreSQL</span>
+                <span>Playwright</span>
               </div>
               <div class="project-links">
                 <a
-                  href="https://github.com/MykolaDotsenko/DjangoMovieProject"
+                  href="https://github.com/MykolaDotsenko/wagtail-StreamField"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -321,21 +315,56 @@
 
             <article class="project-card project-card-compact">
               <div class="project-card-topline">
-                <span class="project-type">Next.js · Full-stack</span>
+                <span class="project-type">Realtime data · Reliability</span>
                 <span aria-hidden="true">03</span>
+              </div>
+              <h3>Turku Departures</h3>
+              <p>
+                Privacy-first transit PWA that keeps live, scheduled, stale, and unknown
+                states distinct while handling GTFS/SIRI edge cases, repeated stops,
+                unreliable GPS, offline use, and mobile accessibility.
+              </p>
+              <div class="tag-list">
+                <span>React</span>
+                <span>GTFS/SIRI</span>
+                <span>PWA</span>
+                <span>Playwright</span>
+              </div>
+              <div class="project-links">
+                <a
+                  href="https://mykoladotsenko.github.io/foli-live-departures/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Live demo ↗
+                </a>
+                <a
+                  href="https://github.com/MykolaDotsenko/foli-live-departures"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Source ↗
+                </a>
+              </div>
+            </article>
+
+            <article class="project-card project-card-compact">
+              <div class="project-card-topline">
+                <span class="project-type">Full-stack · Data integrity</span>
+                <span aria-hidden="true">04</span>
               </div>
               <h3>JunaLippu</h3>
               <p>
-                Railway-booking application with server-side validation, Prisma,
-                tRPC, authentication, seat selection, and database-level duplicate
-                booking protection.
+                Railway booking demo with segment-aware seat inventory, race-safe booking
+                protected by a database constraint, concurrent-booking tests, owner-scoped
+                reservations, and GTFS times beyond 24:00.
               </p>
               <div class="tag-list">
                 <span>Next.js</span>
                 <span>TypeScript</span>
-                <span>Prisma</span>
                 <span>tRPC</span>
-                <span>Zod</span>
+                <span>Prisma</span>
+                <span>Playwright</span>
               </div>
               <div class="project-links">
                 <a
@@ -350,25 +379,67 @@
 
             <article class="project-card project-card-compact">
               <div class="project-card-topline">
-                <span class="project-type">ASP.NET · API</span>
-                <span aria-hidden="true">04</span>
+                <span class="project-type">Local-first · Exact money</span>
+                <span aria-hidden="true">05</span>
               </div>
-              <h3>MoviesAPI</h3>
+              <h3>Shopping Budget Companion</h3>
               <p>
-                REST API built with ASP.NET and Entity Framework, including
-                authentication, relational data, geospatial capabilities, cloud
-                storage integration, and Swagger documentation.
+                Local-first shopping product with integer money, versioned persistence,
+                explicit recovery states, offline support, cross-browser E2E,
+                accessibility checks, and on-device camera features.
               </p>
               <div class="tag-list">
-                <span>C#</span>
-                <span>ASP.NET</span>
-                <span>EF Core</span>
-                <span>SQL Server</span>
-                <span>Azure</span>
+                <span>React</span>
+                <span>TypeScript</span>
+                <span>Zod</span>
+                <span>PWA</span>
+                <span>Playwright</span>
               </div>
               <div class="project-links">
                 <a
-                  href="https://github.com/MykolaDotsenko/MoviesAPI"
+                  href="https://mykoladotsenko.github.io/shopping-budget-companion/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Live demo ↗
+                </a>
+                <a
+                  href="https://github.com/MykolaDotsenko/shopping-budget-companion"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Source ↗
+                </a>
+              </div>
+            </article>
+
+            <article class="project-card project-card-compact">
+              <div class="project-card-topline">
+                <span class="project-type">Legacy API · Data normalization</span>
+                <span aria-hidden="true">06</span>
+              </div>
+              <h3>RPS League — Reaktor</h3>
+              <p>
+                Data-normalization application for a difficult legacy API with paginated
+                ingestion, runtime validation, malformed records, duplicates, rate limits,
+                a canonical domain model, and a server-only API boundary.
+              </p>
+              <div class="tag-list">
+                <span>Next.js</span>
+                <span>TypeScript</span>
+                <span>Zod</span>
+                <span>Data pipelines</span>
+              </div>
+              <div class="project-links">
+                <a
+                  href="https://reaktor-rps-zeta.vercel.app/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Live demo ↗
+                </a>
+                <a
+                  href="https://github.com/MykolaDotsenko/reaktor-mykola"
                   target="_blank"
                   rel="noreferrer"
                 >

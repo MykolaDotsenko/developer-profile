@@ -1,6 +1,6 @@
 # Developer Profile — Mykola Dotsenko
 
-My portfolio and print-friendly CV.
+Recruiter-facing portfolio and print-ready CV for my software engineering work.
 
 **Live:** https://mykoladotsenko.github.io/developer-profile/
 
@@ -10,83 +10,44 @@ My portfolio and print-friendly CV.
 
 ![Mykola Dotsenko — Software Engineer](social-preview.png)
 
-I work mostly with Python/Django, PostgreSQL, CRM and API integrations, search, document flows, and production data issues.
+## What I work on
 
-At Bo, that includes Kivi, OviPro, and HubSpot data at roughly 200k-contact scale, identity matching, synchronization, production fixes, and query-performance work. I also build frontend parts with React, Next.js, TypeScript, and HTMX when they belong to the same feature.
+My main stack is **Python / Django / PostgreSQL**, with React, Next.js, TypeScript and HTMX when a feature needs frontend work.
 
-Before software I worked in agriculture, greenhouse and food production, accounting, sales, and customer-facing roles.
+At Bo, my work includes CRM and property-data integrations, search, document flows, synchronization and production debugging. Recent examples include:
 
-## Projects
+- reconciliation across roughly **200k CRM/contact records** from Kivi, OviPro and HubSpot;
+- reducing one search path from **3.5s to about 300ms**;
+- resolving roughly **1,600 duplicate assignment records** and tightening the ingestion rules behind them.
 
-### [Cultural Currency Converter](https://github.com/MykolaDotsenko/cultural-currency-converter)
+Before software I worked across agriculture, greenhouse and food production, accounting, sales and customer-facing operations.
 
-**Python · Django · PostgreSQL · HTMX · Redis**
+## Selected projects
 
-A travel-money app with current and historical exchange rates. It keeps the source and effective date visible, and the core conversion still works if optional providers fail.
+The site intentionally shows a small set of projects that demonstrate different engineering problems rather than every repository I have built.
 
-### [DomoNest](https://github.com/MykolaDotsenko/domonest)
+| Project | Stack | Why it is here |
+| --- | --- | --- |
+| [Cultural Currency Converter](https://github.com/MykolaDotsenko/cultural-currency-converter) | Python · Django · PostgreSQL · HTMX | Current/historical FX semantics, external providers, provenance and graceful degradation |
+| [DomoNest](https://github.com/MykolaDotsenko/domonest) | Python · Django · Wagtail · PostgreSQL | Cross-feature household workflows, database constraints and derived state |
+| [Turku Departures](https://github.com/MykolaDotsenko/foli-live-departures) | React · GTFS/SIRI · PWA | Realtime vs scheduled data, stale states, GPS edge cases and offline use |
+| [JunaLippu](https://github.com/MykolaDotsenko/JunaLippu) | Next.js · TypeScript · tRPC · Prisma | Segment-aware inventory and race-safe booking protected at the database boundary |
+| [Shopping Budget Companion](https://github.com/MykolaDotsenko/shopping-budget-companion) | React · TypeScript · Zod · PWA | Exact-money arithmetic, durable local state, offline use and on-device camera helpers |
+| [Tradeoff — Decision Lab](https://github.com/MykolaDotsenko/tradeoff-decision-lab) | React · TypeScript · Zod | Explainable decision support that keeps score, evidence confidence and sensitivity separate |
 
-**Python · Django · Wagtail · PostgreSQL**
-
-A household app connecting pantry, recipes, shopping, and recurring tasks. Database constraints and derived views keep those features from drifting apart.
-
-### [Turku Departures](https://github.com/MykolaDotsenko/foli-live-departures)
-
-**React · Vite · GTFS/SIRI · PWA**
-
-A Turku transit PWA that deals with stale live data, repeated stops, weak GPS, offline use, and GTFS/SIRI timing edge cases.
-
-[Live demo](https://mykoladotsenko.github.io/foli-live-departures/)
-
-### [JunaLippu](https://github.com/MykolaDotsenko/JunaLippu)
-
-**Next.js · TypeScript · tRPC · Prisma**
-
-A Finnish rail-booking demo with segment-level seat inventory and a database constraint that prevents concurrent overbooking.
-
-### [Shopping Budget Companion](https://github.com/MykolaDotsenko/shopping-budget-companion)
-
-**React · TypeScript · Zod · PWA**
-
-A local-first shopping budget app with exact-money arithmetic, versioned browser storage, offline use, and barcode/OCR/image-recognition helpers.
-
-[Live demo](https://mykoladotsenko.github.io/shopping-budget-companion/)
-
-### [RPS League — Reaktor](https://github.com/MykolaDotsenko/reaktor-rps-league)
-
-**Next.js · TypeScript · Zod**
-
-A Reaktor assignment built around a difficult legacy API with pagination, malformed records, duplicates, rate limits, and inconsistent payloads.
-
-[Live demo](https://reaktor-rps-zeta.vercel.app/)
-
-### [Tradeoff — Decision Lab](https://github.com/MykolaDotsenko/tradeoff-decision-lab)
-
-**React · TypeScript · Zod · Vercel**
-
-A comparison tool where score, confidence, and sensitivity are separate. AI can help prepare the inputs, but regular code calculates the ranking.
-
-[Live demo](https://tradeoff-decision-lab.vercel.app/)
-
-### [DayDock](https://github.com/MykolaDotsenko/daydock)
-
-**React · TypeScript · Local-first**
-
-A browser-only workday planner for notes, priorities, focus blocks, follow-ups, and daily review.
-
-[Live demo](https://mykoladotsenko.github.io/daydock/)
+Additional examples include [RPS League — Reaktor](https://github.com/MykolaDotsenko/reaktor-rps-league), [MovieShelf](https://github.com/MykolaDotsenko/movieshelf), and [Pakettitutka](https://github.com/MykolaDotsenko/pakettitutka).
 
 ## This site
 
-The site is plain HTML and CSS. It does not need a frontend runtime.
+The portfolio is deliberately plain **HTML + CSS**. It does not need a frontend framework or client-side application runtime.
 
-The repo also contains:
+The repository also contains:
 
-- a separate printable resume;
-- responsive styles;
-- social preview assets;
-- a local-link checker;
-- GitHub Actions checks for HTML and file references.
+- a separate two-page print-ready resume;
+- responsive and print styles;
+- social-preview assets;
+- static link/file validation;
+- GitHub Actions checks for HTML and repository references.
 
 ## Local preview
 
@@ -104,6 +65,12 @@ Resume:
 
 ```text
 http://127.0.0.1:8000/resume.html
+```
+
+## Checks
+
+```bash
+python scripts/check_site.py
 ```
 
 ## Author

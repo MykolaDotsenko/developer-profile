@@ -103,7 +103,7 @@ The checks are deliberately narrow: they protect the static site without introdu
 - [Turku Departures — realtime transit reliability / PWA](https://github.com/MykolaDotsenko/foli-live-departures)
 - [JunaLippu — race-safe full-stack booking](https://github.com/MykolaDotsenko/JunaLippu)
 - [Shopping Budget Companion — local-first exact-money product](https://github.com/MykolaDotsenko/shopping-budget-companion)
-- [RPS League — legacy API normalization](https://github.com/MykolaDotsenko/reaktor-mykola)
+- [RPS League — legacy API normalization](https://github.com/MykolaDotsenko/reaktor-rps-league)
 
 ## Author
 

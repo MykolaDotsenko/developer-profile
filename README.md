@@ -62,7 +62,6 @@ For this type of product, adding React, Next.js, or another runtime framework wo
 │   └── check_local_links.py
 ├── avatar.jpg
 ├── favicon.svg
-├── pizzeria-preview.jpg
 ├── social-preview.png
 ├── index.html
 ├── resume.html
@@ -99,10 +98,12 @@ The checks are deliberately narrow: they protect the static site without introdu
 
 ## Selected work featured on the site
 
-- [Pizzeria — React + TypeScript](https://github.com/MykolaDotsenko/Pizzeria-React-Typescript-Project)
-- [MovieShelf — Django](https://github.com/MykolaDotsenko/DjangoMovieProject)
-- [JunaLippu — Next.js full-stack](https://github.com/MykolaDotsenko/JunaLippu)
-- [MoviesAPI — ASP.NET](https://github.com/MykolaDotsenko/MoviesAPI)
+- [Cultural Currency Converter — Django / PostgreSQL / HTMX](https://github.com/MykolaDotsenko/cultural-currency-converter-)
+- [DomoNest — Django / Wagtail / domain workflows](https://github.com/MykolaDotsenko/wagtail-StreamField)
+- [Turku Departures — realtime transit reliability / PWA](https://github.com/MykolaDotsenko/foli-live-departures)
+- [JunaLippu — race-safe full-stack booking](https://github.com/MykolaDotsenko/JunaLippu)
+- [Shopping Budget Companion — local-first exact-money product](https://github.com/MykolaDotsenko/shopping-budget-companion)
+- [RPS League — legacy API normalization](https://github.com/MykolaDotsenko/reaktor-mykola)
 
 ## Author
 

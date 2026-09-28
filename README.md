@@ -1,6 +1,6 @@
 # Developer Profile — Mykola Dotsenko
 
-My public software profile and recruiter CV.
+My portfolio and print-friendly CV.
 
 **Live:** https://mykoladotsenko.github.io/developer-profile/
 
@@ -10,31 +10,31 @@ My public software profile and recruiter CV.
 
 ![Mykola Dotsenko — Software Engineer](social-preview.png)
 
-I work mostly with Python/Django backends, PostgreSQL, external integrations, search, documents, and data that has to stay consistent across more than one system. I also do frontend work with React, Next.js, TypeScript, and HTMX when it is part of the same feature.
+I work mostly with Python/Django, PostgreSQL, CRM and API integrations, search, document flows, and production data issues.
 
-At Bo, some of my current work includes Kivi, OviPro, and HubSpot CRM flows at roughly 200k-contact scale, identity matching, document synchronization, production debugging, and query performance work.
+At Bo, that includes Kivi, OviPro, and HubSpot data at roughly 200k-contact scale, identity matching, synchronization, production fixes, and query-performance work. I also build frontend parts with React, Next.js, TypeScript, and HTMX when they belong to the same feature.
 
-Before software I spent more than eight years in agriculture, greenhouse and food production, accounting, sales, and customer-facing roles. That is useful context for AgTech and other operational products.
+Before software I worked in agriculture, greenhouse and food production, accounting, sales, and customer-facing roles.
 
-## Projects on the site
+## Projects
 
 ### [Cultural Currency Converter](https://github.com/MykolaDotsenko/cultural-currency-converter)
 
 **Python · Django · PostgreSQL · HTMX · Redis**
 
-A travel-money app with current and historical FX rates. The main implementation problem is keeping source and effective-date meaning correct while still giving the user a useful result when optional providers fail.
+A travel-money app with current and historical exchange rates. It keeps the source and effective date visible, and the core conversion still works if optional providers fail.
 
 ### [DomoNest](https://github.com/MykolaDotsenko/domonest)
 
 **Python · Django · Wagtail · PostgreSQL**
 
-A household app connecting pantry, recipes, shopping, and recurring tasks. I use database constraints and derived state so those features do not drift apart.
+A household app connecting pantry, recipes, shopping, and recurring tasks. Database constraints and derived views keep those features from drifting apart.
 
 ### [Turku Departures](https://github.com/MykolaDotsenko/foli-live-departures)
 
 **React · Vite · GTFS/SIRI · PWA**
 
-A Turku transit PWA that deals with stale live data, repeated stops, poor GPS, offline use, and the difference between live and scheduled departure information.
+A Turku transit PWA that deals with stale live data, repeated stops, weak GPS, offline use, and GTFS/SIRI timing edge cases.
 
 [Live demo](https://mykoladotsenko.github.io/foli-live-departures/)
 
@@ -42,13 +42,13 @@ A Turku transit PWA that deals with stale live data, repeated stops, poor GPS, o
 
 **Next.js · TypeScript · tRPC · Prisma**
 
-A Finnish rail-booking demo with segment-level seat inventory. Database rules protect against concurrent overbooking.
+A Finnish rail-booking demo with segment-level seat inventory and a database constraint that prevents concurrent overbooking.
 
 ### [Shopping Budget Companion](https://github.com/MykolaDotsenko/shopping-budget-companion)
 
 **React · TypeScript · Zod · PWA**
 
-A local-first shopping budget app. Money is stored as integer minor units, saved data is versioned, and camera/OCR recognition can suggest values but cannot silently add them to the cart.
+A local-first shopping budget app with exact-money arithmetic, versioned browser storage, offline use, and barcode/OCR/image-recognition helpers.
 
 [Live demo](https://mykoladotsenko.github.io/shopping-budget-companion/)
 
@@ -56,7 +56,7 @@ A local-first shopping budget app. Money is stored as integer minor units, saved
 
 **Next.js · TypeScript · Zod**
 
-A data-normalization exercise built around a difficult legacy API: pagination, malformed records, duplicates, rate limits, and inconsistent payloads.
+A Reaktor assignment built around a difficult legacy API with pagination, malformed records, duplicates, rate limits, and inconsistent payloads.
 
 [Live demo](https://reaktor-rps-zeta.vercel.app/)
 
@@ -64,7 +64,7 @@ A data-normalization exercise built around a difficult legacy API: pagination, m
 
 **React · TypeScript · Zod · Vercel**
 
-A comparison tool where score, evidence confidence, and sensitivity stay separate. AI can help turn a rough description into inputs, but the ranking is deterministic.
+A comparison tool where score, confidence, and sensitivity are separate. AI can help prepare the inputs, but regular code calculates the ranking.
 
 [Live demo](https://tradeoff-decision-lab.vercel.app/)
 
@@ -72,22 +72,21 @@ A comparison tool where score, evidence confidence, and sensitivity stay separat
 
 **React · TypeScript · Local-first**
 
-A browser-only workday planner for capture, priorities, focus blocks, follow-ups, and daily review.
+A browser-only workday planner for notes, priorities, focus blocks, follow-ups, and daily review.
 
 [Live demo](https://mykoladotsenko.github.io/daydock/)
 
-## About this site
+## This site
 
-The site is plain HTML and CSS on purpose. There is no application state or interaction here that needs a frontend framework.
+The site is plain HTML and CSS. It does not need a frontend runtime.
 
-The repository contains:
+The repo also contains:
 
-- the public profile page;
-- a separate print-friendly resume;
-- responsive CSS;
-- social preview metadata;
-- a small local-link validation script;
-- GitHub Actions checks for HTML and local references.
+- a separate printable resume;
+- responsive styles;
+- social preview assets;
+- a local-link checker;
+- GitHub Actions checks for HTML and file references.
 
 ## Local preview
 
@@ -110,4 +109,4 @@ http://127.0.0.1:8000/resume.html
 ## Author
 
 **Mykola Dotsenko**  
-Software Engineer — Python/Django · Backend · Data · Integrations
+Software Engineer — Python/Django · Backend · Data Integrations

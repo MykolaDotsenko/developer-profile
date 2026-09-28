@@ -609,11 +609,11 @@ h3 {
   transition: background-color 160ms ease;
 }
 
-.project-card:nth-child(odd):not(.project-card-featured) {
+.project-card:nth-child(even) {
   padding-right: 0.7rem;
 }
 
-.project-card:nth-child(even) {
+.project-card:nth-child(odd):not(.project-card-featured) {
   border-left: 1px solid var(--rule);
   padding-left: 1.35rem;
 }
@@ -982,8 +982,8 @@ h3 {
     grid-template-columns: 1fr;
   }
 
-  .project-card:nth-child(odd):not(.project-card-featured),
-  .project-card:nth-child(even) {
+  .project-card:nth-child(even),
+  .project-card:nth-child(odd):not(.project-card-featured) {
     border-left: 0;
     padding-right: 0;
     padding-left: 0;

@@ -47,7 +47,10 @@
 
     <header class="site-header">
       <div class="container nav-shell">
-        <a class="brand" href="#top" aria-label="Mykola Dotsenko home">MD</a>
+        <a class="brand" href="#top" aria-label="Mykola Dotsenko home">
+          <span class="brand-initials">MD</span>
+          <img class="brand-knot" src="celtic-data-knot.svg" alt="" aria-hidden="true" width="24" height="24">
+        </a>
 
         <nav class="primary-nav" aria-label="Primary navigation">
           <a href="#about">About</a>
@@ -64,6 +67,7 @@
       <section class="hero" id="top">
         <div class="container hero-grid">
           <div class="hero-copy">
+            <img class="hero-knot" src="celtic-data-knot.svg" alt="" aria-hidden="true" width="82" height="82">
             <p class="eyebrow">Software Engineer · Turku, Finland</p>
 
             <h1>Mykola Dotsenko</h1>
@@ -280,10 +284,6 @@
                     <dt>Provider failures</dt>
                     <dd>Exchange conversion keeps working even if optional country media, enrichment, or AI is down.</dd>
                   </div>
-                  <div>
-                    <dt>What I tested</dt>
-                    <dd>Provider responses, PostgreSQL persistence, browser behavior, accessibility, backup, and restore.</dd>
-                  </div>
                 </dl>
               </aside>
             </article>
@@ -417,45 +417,12 @@
               </div>
             </article>
 
-            <article class="project-card project-card-compact">
-              <div class="project-card-topline">
-                <span class="project-type">Legacy API · Data normalization</span>
-                <span aria-hidden="true">06</span>
-              </div>
-              <h3>RPS League — Reaktor</h3>
-              <p>
-                A Reaktor assignment built around a messy legacy API: pagination,
-                malformed records, duplicates, rate limits, and inconsistent payloads.
-                I normalize that data before it reaches the rest of the app.
-              </p>
-              <div class="tag-list">
-                <span>Next.js</span>
-                <span>TypeScript</span>
-                <span>Zod</span>
-                <span>Data pipelines</span>
-              </div>
-              <div class="project-links">
-                <a
-                  href="https://reaktor-rps-zeta.vercel.app/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Live demo ↗
-                </a>
-                <a
-                  href="https://github.com/MykolaDotsenko/reaktor-rps-league"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Source ↗
-                </a>
-              </div>
-            </article>
+
 
             <article class="project-card project-card-compact">
               <div class="project-card-topline">
                 <span class="project-type">Decision support · Explainability</span>
-                <span aria-hidden="true">07</span>
+                <span aria-hidden="true">06</span>
               </div>
               <h3>Tradeoff — Decision Lab</h3>
               <p>
@@ -487,41 +454,26 @@
               </div>
             </article>
 
-            <article class="project-card project-card-compact">
-              <div class="project-card-topline">
-                <span class="project-type">Local-first · Workday planning</span>
-                <span aria-hidden="true">08</span>
-              </div>
-              <h3>DayDock</h3>
-              <p>
-                A browser-only workday planner for notes, priorities, focus blocks,
-                follow-ups, and daily review. I built it around a simple question:
-                what information is actually useful again later in the same day?
-              </p>
-              <div class="tag-list">
-                <span>React</span>
-                <span>TypeScript</span>
-                <span>Local-first</span>
-                <span>Responsive UI</span>
-              </div>
-              <div class="project-links">
-                <a
-                  href="https://mykoladotsenko.github.io/daydock/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Live demo ↗
-                </a>
-                <a
-                  href="https://github.com/MykolaDotsenko/daydock"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Source ↗
-                </a>
-              </div>
-            </article>
+
           </div>
+
+          <nav class="more-work" aria-label="More public projects">
+            <span class="more-work-label">More work</span>
+            <a
+              href="https://reaktor-rps-zeta.vercel.app/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              RPS League — Reaktor <span>legacy API / normalization</span> ↗
+            </a>
+            <a
+              href="https://mykoladotsenko.github.io/daydock/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              DayDock <span>local-first workday planner</span> ↗
+            </a>
+          </nav>
         </div>
       </section>
 
@@ -557,6 +509,7 @@
 
       <section class="section contact-section" id="contact">
         <div class="container contact-card">
+          <img class="contact-knot" src="celtic-data-knot.svg" alt="" aria-hidden="true" width="118" height="118">
           <div>
             <p class="section-kicker">Contact</p>
             <h2>If this work sounds relevant to your team, let’s talk.</h2>

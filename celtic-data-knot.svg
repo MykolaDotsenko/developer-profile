@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Celtic Data Knot</title>
+  <desc id="desc">A geometric interlaced knot combining Celtic linework with four data nodes.</desc>
+
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <path
+      d="M80 18
+         C104 18 116 32 116 50
+         C116 66 104 74 88 80
+         C104 86 116 94 116 110
+         C116 128 104 142 80 142
+         C56 142 44 128 44 110
+         C44 94 56 86 72 80
+         C56 74 44 66 44 50
+         C44 32 56 18 80 18Z"
+      stroke="#123b2d"
+      stroke-width="10"/>
+
+    <path
+      d="M18 80
+         C18 56 32 44 50 44
+         C66 44 74 56 80 72
+         C86 56 94 44 110 44
+         C128 44 142 56 142 80
+         C142 104 128 116 110 116
+         C94 116 86 104 80 88
+         C74 104 66 116 50 116
+         C32 116 18 104 18 80Z"
+      stroke="#b08a4a"
+      stroke-width="10"/>
+
+    <path d="M73 64L87 96" stroke="#f3f0e7" stroke-width="13"/>
+    <path d="M96 73L64 87" stroke="#f3f0e7" stroke-width="13"/>
+
+    <path d="M73 64L87 96" stroke="#123b2d" stroke-width="10"/>
+    <path d="M96 73L64 87" stroke="#b08a4a" stroke-width="10"/>
+
+    <circle cx="80" cy="18" r="5.5" fill="#b08a4a" stroke="#123b2d" stroke-width="2"/>
+    <circle cx="142" cy="80" r="5.5" fill="#123b2d" stroke="#b08a4a" stroke-width="2"/>
+    <circle cx="80" cy="142" r="5.5" fill="#b08a4a" stroke="#123b2d" stroke-width="2"/>
+    <circle cx="18" cy="80" r="5.5" fill="#123b2d" stroke="#b08a4a" stroke-width="2"/>
+  </g>
+</svg>

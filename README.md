@@ -98,8 +98,8 @@ The checks are deliberately narrow: they protect the static site without introdu
 
 ## Selected work featured on the site
 
-- [Cultural Currency Converter — Django / PostgreSQL / HTMX](https://github.com/MykolaDotsenko/cultural-currency-converter-)
-- [DomoNest — Django / Wagtail / domain workflows](https://github.com/MykolaDotsenko/wagtail-StreamField)
+- [Cultural Currency Converter — Django / PostgreSQL / HTMX](https://github.com/MykolaDotsenko/cultural-currency-converter)
+- [DomoNest — Django / Wagtail / domain workflows](https://github.com/MykolaDotsenko/domonest)
 - [Turku Departures — realtime transit reliability / PWA](https://github.com/MykolaDotsenko/foli-live-departures)
 - [JunaLippu — race-safe full-stack booking](https://github.com/MykolaDotsenko/JunaLippu)
 - [Shopping Budget Companion — local-first exact-money product](https://github.com/MykolaDotsenko/shopping-budget-companion)

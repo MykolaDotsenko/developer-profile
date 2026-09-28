@@ -16,7 +16,7 @@
     <meta property="og:title" content="Mykola Dotsenko — Software Engineer">
     <meta
       property="og:description"
-      content="Backend-first software engineering for reliable products and data flows.">
+      content="Python/Django backend work, integrations, data-heavy features, and practical full-stack delivery.">
     <meta property="og:url" content="https://mykoladotsenko.github.io/developer-profile/">
     <meta property="og:site_name" content="Mykola Dotsenko — Developer Profile">
     <meta
@@ -69,13 +69,14 @@
             <h1>Mykola Dotsenko</h1>
 
             <p class="hero-statement">
-              Backend-first engineering for reliable products
-              <span class="accent-text">and data flows.</span>
+              I build Python/Django backends,
+              <span class="accent-text">integrations, and data-heavy products.</span>
             </p>
 
             <p class="lede">
-              I build production web applications with a focus on Python/Django,
-              data-heavy integrations, validation, maintainability, and pragmatic delivery.
+              A lot of my work sits between systems: CRM data, external APIs, search,
+              documents, and the UI people use to make sense of it. Python/Django is my
+              main stack, but I am comfortable finishing the frontend too.
             </p>
 
             <div class="hero-actions" role="group" aria-label="Primary actions">
@@ -109,22 +110,22 @@
               height="360">
 
             <div class="profile-intro">
-              <p class="profile-label">Engineering focus</p>
-              <p class="profile-title">Backend &amp; data systems</p>
+              <p class="profile-label">Main stack</p>
+              <p class="profile-title">Python / Django / PostgreSQL</p>
             </div>
 
             <dl class="profile-facts">
               <div>
-                <dt>Core stack</dt>
-                <dd>Python · Django · PostgreSQL</dd>
+                <dt>Current work</dt>
+                <dd>CRM · APIs · search · document flows</dd>
               </div>
               <div>
-                <dt>Strengths</dt>
-                <dd>Integrations · validation · reliability</dd>
+                <dt>Data work</dt>
+                <dd>Reconciliation · identity matching · sync</dd>
               </div>
               <div>
-                <dt>Delivery</dt>
-                <dd>Pragmatic full-stack ownership when the product needs it</dd>
+                <dt>Frontend too</dt>
+                <dd>React · Next.js · TypeScript · HTMX</dd>
               </div>
             </dl>
           </aside>
@@ -135,19 +136,19 @@
         <div class="container section-grid">
           <div>
             <p class="section-kicker">About</p>
-            <h2>I care about systems that stay understandable after they grow.</h2>
+            <h2>Most of my interesting work starts when two systems disagree.</h2>
           </div>
 
           <div class="prose">
             <p>
-              My strongest area is backend and data-oriented product development:
-              designing clear domain logic, validating untrusted input, integrating
-              external systems, and keeping data consistent across workflows.
+              At work that usually means tracing a record through several systems,
+              deciding which source is authoritative, and fixing the part of the flow that
+              actually caused the bad state instead of patching what appeared on screen.
             </p>
             <p>
-              I also work comfortably across the frontend when the product needs it.
-              I prefer simple architecture, explicit trade-offs, automated checks,
-              and solutions that reduce future maintenance instead of adding ceremony.
+              I also build the UI when it is part of the same feature. I tend to choose
+              boring, familiar tools unless there is a clear reason not to, and I like tests
+              that prove the failure case as well as the happy path.
             </p>
           </div>
         </div>
@@ -158,7 +159,7 @@
           <div class="section-heading">
             <div>
               <p class="section-kicker">Experience</p>
-              <h2>Selected professional experience</h2>
+              <h2>What I do at work</h2>
             </div>
           </div>
 
@@ -171,21 +172,24 @@
             <div>
               <h3>Software Developer · Techco / Bo</h3>
               <p class="timeline-summary">
-                Own production delivery across backend systems, data integrations, APIs,
-                databases, and the frontend surfaces that connect them.
+                Most of my current work is in the Bo product: Django backend, CRM and
+                property data, external integrations, search, document flows, and the UI
+                around them.
               </p>
               <ul class="bullet-list impact-list">
                 <li>
-                  Reconciled data across <strong>~200k CRM and contact records</strong>
-                  using explicit validation, ambiguity handling, and idempotent processing.
+                  Built CRM reconciliation around <strong>~200k contacts</strong> across
+                  Kivi, OviPro, and HubSpot. Ambiguous identity matches go to review instead
+                  of being merged automatically.
                 </li>
                 <li>
-                  Reduced a key search flow from <strong>3.5s to ~300ms</strong> through
-                  backend and query-path optimization.
+                  Cut one search path from <strong>3.5s to ~300ms</strong> by changing
+                  the query structure, relationship loading, candidate limits, and caching.
                 </li>
                 <li>
-                  Resolved <strong>~1,600 duplicate assignment records</strong> while
-                  strengthening data-integrity safeguards and repeatable ingestion flows.
+                  Cleaned up <strong>~1,600 duplicate assignment records</strong> and
+                  tightened the ingestion rules so the same problem would not simply return
+                  on the next sync.
                 </li>
               </ul>
             </div>
@@ -200,9 +204,9 @@
             <div>
               <h3>Agriculture, sales, accounting, and production</h3>
               <p class="timeline-summary">
-                A multidisciplinary background that shaped a practical approach to
-                ownership, process improvement, and translating business needs into
-                reliable technical solutions.
+                Before software I spent more than eight years around agriculture,
+                greenhouse and food production, accounting, sales, and customer work.
+                That is useful context when software has to fit an actual business process.
               </p>
             </div>
           </article>
@@ -214,7 +218,7 @@
           <div class="section-heading">
             <div>
               <p class="section-kicker">Selected work</p>
-              <h2>Projects that show how I engineer.</h2>
+              <h2>Projects I’d show in an interview</h2>
             </div>
             <a
               class="text-link"
@@ -235,9 +239,9 @@
                 </div>
                 <h3>Cultural Currency Converter</h3>
                 <p>
-                  Django-first travel-money product built around trustworthy FX semantics,
-                  external-provider boundaries, provenance-aware context, and graceful
-                  degradation when optional enrichment or AI is unavailable.
+                  A Django travel-money app where the tricky part is not the arithmetic.
+                  Current and historical rates need the right source and effective date,
+                  and the basic conversion still has to work if optional AI or media fails.
                 </p>
 
                 <figure class="project-visual">
@@ -265,20 +269,20 @@
                 </div>
               </div>
 
-              <aside class="project-proof" aria-label="Cultural Currency Converter engineering proof">
-                <p class="proof-kicker">Engineering proof</p>
+              <aside class="project-proof" aria-label="Cultural Currency Converter implementation notes">
+                <p class="proof-kicker">Why I keep this project</p>
                 <dl>
                   <div>
-                    <dt>Data semantics</dt>
-                    <dd>Current and historical FX keep source and effective-date meaning explicit.</dd>
+                    <dt>FX dates</dt>
+                    <dd>The UI distinguishes when a rate was requested from when that rate was actually valid.</dd>
                   </div>
                   <div>
-                    <dt>Failure model</dt>
-                    <dd>Core conversion remains useful when optional media, enrichment, or AI fails.</dd>
+                    <dt>Provider failures</dt>
+                    <dd>Exchange conversion keeps working even if optional country media, enrichment, or AI is down.</dd>
                   </div>
                   <div>
-                    <dt>Quality</dt>
-                    <dd>Provider boundaries, PostgreSQL, browser checks, accessibility, backup and restore tooling.</dd>
+                    <dt>What I tested</dt>
+                    <dd>Provider responses, PostgreSQL persistence, browser behavior, accessibility, backup, and restore.</dd>
                   </div>
                 </dl>
               </aside>
@@ -291,9 +295,9 @@
               </div>
               <h3>DomoNest</h3>
               <p>
-                Household operating system with cross-domain workflows, owner-scoped
-                private state, database invariants, idempotent writes, deterministic
-                recurrence, and server-rendered progressive enhancement.
+                A Django household app where pantry, recipes, shopping, and recurring
+                tasks share data. The interesting part is keeping those flows consistent
+                without copying the same state into several features.
               </p>
               <div class="tag-list">
                 <span>Python</span>
@@ -320,9 +324,9 @@
               </div>
               <h3>Turku Departures</h3>
               <p>
-                Privacy-first transit PWA that keeps live, scheduled, stale, and unknown
-                states distinct while handling GTFS/SIRI edge cases, repeated stops,
-                unreliable GPS, offline use, and mobile accessibility.
+                A Turku transit PWA using GTFS/SIRI. It deals with stale live data,
+                repeated stops, poor GPS, offline use, and the awkward question of whether
+                a departure time is actually live or only scheduled.
               </p>
               <div class="tag-list">
                 <span>React</span>
@@ -355,9 +359,9 @@
               </div>
               <h3>JunaLippu</h3>
               <p>
-                Railway booking demo with segment-aware seat inventory, race-safe booking
-                protected by a database constraint, concurrent-booking tests, owner-scoped
-                reservations, and GTFS times beyond 24:00.
+                A Finnish rail booking demo where a seat can be free on one route segment
+                and occupied on another. A database constraint, not just UI logic, protects
+                against two users booking the same segment at the same time.
               </p>
               <div class="tag-list">
                 <span>Next.js</span>
@@ -384,9 +388,9 @@
               </div>
               <h3>Shopping Budget Companion</h3>
               <p>
-                Local-first shopping product with integer money, versioned persistence,
-                explicit recovery states, offline support, cross-browser E2E,
-                accessibility checks, and on-device camera features.
+                A shopping-budget PWA that works offline. Prices use integer minor units,
+                saved data is versioned, and barcode/OCR/image recognition can suggest a
+                value but cannot silently put it into the cart.
               </p>
               <div class="tag-list">
                 <span>React</span>
@@ -420,9 +424,9 @@
               </div>
               <h3>RPS League — Reaktor</h3>
               <p>
-                Data-normalization application for a difficult legacy API with paginated
-                ingestion, runtime validation, malformed records, duplicates, rate limits,
-                a canonical domain model, and a server-only API boundary.
+                A Reaktor assignment built around a messy legacy API: pagination,
+                malformed records, duplicates, rate limits, and inconsistent payloads.
+                I normalize that data before it reaches the rest of the app.
               </p>
               <div class="tag-list">
                 <span>Next.js</span>
@@ -447,6 +451,76 @@
                 </a>
               </div>
             </article>
+
+            <article class="project-card project-card-compact">
+              <div class="project-card-topline">
+                <span class="project-type">Decision support · Explainability</span>
+                <span aria-hidden="true">07</span>
+              </div>
+              <h3>Tradeoff — Decision Lab</h3>
+              <p>
+                A comparison tool for decisions with several criteria. Score, confidence,
+                and sensitivity stay separate, so a weak assumption does not disappear
+                inside one impressive-looking number. AI can prepare inputs, not decide the winner.
+              </p>
+              <div class="tag-list">
+                <span>React</span>
+                <span>TypeScript</span>
+                <span>Zod</span>
+                <span>Vercel</span>
+              </div>
+              <div class="project-links">
+                <a
+                  href="https://tradeoff-decision-lab.vercel.app/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Live demo ↗
+                </a>
+                <a
+                  href="https://github.com/MykolaDotsenko/tradeoff-decision-lab"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Source ↗
+                </a>
+              </div>
+            </article>
+
+            <article class="project-card project-card-compact">
+              <div class="project-card-topline">
+                <span class="project-type">Local-first · Workday planning</span>
+                <span aria-hidden="true">08</span>
+              </div>
+              <h3>DayDock</h3>
+              <p>
+                A browser-only workday planner for notes, priorities, focus blocks,
+                follow-ups, and daily review. I built it around a simple question:
+                what information is actually useful again later in the same day?
+              </p>
+              <div class="tag-list">
+                <span>React</span>
+                <span>TypeScript</span>
+                <span>Local-first</span>
+                <span>Responsive UI</span>
+              </div>
+              <div class="project-links">
+                <a
+                  href="https://mykoladotsenko.github.io/daydock/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Live demo ↗
+                </a>
+                <a
+                  href="https://github.com/MykolaDotsenko/daydock"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Source ↗
+                </a>
+              </div>
+            </article>
           </div>
         </div>
       </section>
@@ -456,7 +530,7 @@
           <div class="section-heading">
             <div>
               <p class="section-kicker">Skills</p>
-              <h2>Tools I use to ship maintainable software.</h2>
+              <h2>Current toolkit</h2>
             </div>
           </div>
 
@@ -485,10 +559,10 @@
         <div class="container contact-card">
           <div>
             <p class="section-kicker">Contact</p>
-            <h2>Interested in working together?</h2>
+            <h2>If this work sounds relevant to your team, let’s talk.</h2>
             <p>
-              The best way to reach me is through LinkedIn. You can also explore the
-              source code behind my projects on GitHub.
+              LinkedIn is the easiest way to reach me. The repositories are public if
+              you want to look at the code first.
             </p>
           </div>
 

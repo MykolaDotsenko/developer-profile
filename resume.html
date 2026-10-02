@@ -7,13 +7,35 @@
     <title>Mykola Dotsenko — Software Engineer Resume</title>
     <meta
       name="description"
-      content="Mykola Dotsenko — Software Engineer working mainly with Python/Django, PostgreSQL, data integrations, production debugging, and full-stack web development.">
+      content="Mykola Dotsenko — Software Engineer in Turku, Finland, working mainly with Python/Django, PostgreSQL, data integrations, production debugging, and full-stack web development.">
+    <meta name="author" content="Mykola Dotsenko">
     <meta name="robots" content="index, follow">
+    <meta name="color-scheme" content="light">
     <meta name="theme-color" content="#d8d2c8">
     <link
       rel="canonical"
       href="https://mykoladotsenko.github.io/developer-profile/resume.html">
+
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="Mykola Dotsenko — Software Engineer Resume">
+    <meta
+      property="og:description"
+      content="Two-page resume: Python/Django backend, PostgreSQL, CRM and data integrations, and full-stack delivery.">
+    <meta property="og:url" content="https://mykoladotsenko.github.io/developer-profile/resume.html">
+    <meta
+      property="og:image"
+      content="https://mykoladotsenko.github.io/developer-profile/social-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link
+      rel="preload"
+      href="assets/fonts/fraunces-latin-opsz-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin>
     <link rel="stylesheet" href="resume.css">
   </head>
 
@@ -23,6 +45,7 @@
     <header class="resume-toolbar" aria-label="Resume actions">
       <a class="toolbar-link" href="index.html">← Portfolio</a>
       <div class="toolbar-actions">
+        <a href="mailto:docnikolaj1990@gmail.com">Email</a>
         <a href="https://www.linkedin.com/in/mykola-dotsenko/" target="_blank" rel="noreferrer">
           LinkedIn ↗
         </a>
@@ -40,12 +63,16 @@
             <p class="role-line">Software Engineer · Python/Django · Backend &amp; Data Integrations</p>
             <h1>Mykola Dotsenko</h1>
             <p class="location">Turku, Finland</p>
+            <p class="languages">
+              <strong>Languages:</strong> English (C1) · Finnish (A1–A2) · Ukrainian (native)
+            </p>
           </div>
 
-          <nav class="profile-links" aria-label="Professional profiles">
+          <nav class="profile-links" aria-label="Contact and profiles">
+            <a href="mailto:docnikolaj1990@gmail.com">docnikolaj1990@gmail.com</a>
             <a href="https://www.linkedin.com/in/mykola-dotsenko/">linkedin.com/in/mykola-dotsenko</a>
             <a href="https://github.com/MykolaDotsenko">github.com/MykolaDotsenko</a>
-            <a href="index.html">mykoladotsenko.github.io/developer-profile</a>
+            <a href="https://mykoladotsenko.github.io/developer-profile/">mykoladotsenko.github.io/developer-profile</a>
           </nav>
         </header>
 
@@ -113,6 +140,10 @@
                 query structure, relationship loading, candidate limits, and caching.
               </li>
               <li>
+                Resolved <strong>~1,600 duplicate assignment records</strong> and tightened
+                the ingestion rules so the duplicates would not return on the next sync.
+              </li>
+              <li>
                 Shipped Django/Wagtail/DRF, PostgreSQL, HTMX, JavaScript, Tailwind,
                 PDF/document, external API, and AI-assisted features in the same product.
               </li>
@@ -133,8 +164,8 @@
             </header>
             <ul>
               <li>
-                Built SaaS features with Next.js and TypeScript, including reusable UI,
-                PostgreSQL/Supabase workflows, and full-text/semantic search experiments.
+                Built SaaS features with Next.js and TypeScript, including reusable UI and
+                PostgreSQL/Supabase workflows, and prototyped full-text and semantic search.
               </li>
             </ul>
           </article>
@@ -142,8 +173,8 @@
           <article class="job">
             <header class="job-header">
               <div>
-                <h3>Software Developer · Nidos Ltd.</h3>
-                <p>Turku, Finland · Internship</p>
+                <h3>Software Developer Intern · Nidos Ltd.</h3>
+                <p>Turku, Finland · Internship via the BearIT LearnIT programme</p>
               </div>
               <p class="job-date">Aug 2024 — Nov 2024</p>
             </header>
@@ -164,7 +195,7 @@
           <article class="job compact-job">
             <header class="job-header">
               <div>
-                <h3>Software Developer Trainee · BearIT Oy</h3>
+                <h3>Software Developer Trainee · BearIT Oy (LearnIT)</h3>
                 <p>Tampere, Finland</p>
               </div>
               <p class="job-date">Mar 2024 — Nov 2024</p>
@@ -172,6 +203,7 @@
             <p>
               Full-stack project work with Next.js, TypeScript, tRPC, Prisma, authentication,
               testing, deployment, AWS basics, Agile/Scrum, and Finnish work-life training.
+              The programme ended with the Nidos Ltd. internship listed above.
             </p>
           </article>
 
@@ -198,15 +230,6 @@
 
           <div class="project-list">
             <article>
-              <h3>DomoNest <span>Python · Django · Wagtail · PostgreSQL</span></h3>
-              <p>
-                A Django household app where pantry, recipes, shopping, and recurring tasks
-                share data. Database constraints and derived views keep those features from
-                drifting apart as the app grows.
-              </p>
-            </article>
-
-            <article>
               <h3>Cultural Currency Converter <span>Django · PostgreSQL · HTMX · Redis</span></h3>
               <p>
                 A travel-money app with current and historical FX rates. It keeps the source
@@ -216,11 +239,11 @@
             </article>
 
             <article>
-              <h3>Shopping Budget Companion <span>React · TypeScript · Zod · PWA</span></h3>
+              <h3>DomoNest <span>Python · Django · Wagtail · PostgreSQL</span></h3>
               <p>
-                A local-first shopping budget PWA. Money is stored in integer minor units,
-                browser data is versioned, and barcode/OCR/image recognition can suggest a
-                value but cannot add it to the cart without confirmation.
+                A Django household app where pantry, recipes, shopping, and recurring tasks
+                share data. Database constraints and derived views keep those features from
+                drifting apart as the app grows.
               </p>
             </article>
 
@@ -230,6 +253,15 @@
                 A Finnish rail-booking demo where seat availability is tracked by route
                 segment. A database constraint protects against two users booking the same
                 segment at the same time.
+              </p>
+            </article>
+
+            <article>
+              <h3>Shopping Budget Companion <span>React · TypeScript · Zod · PWA</span></h3>
+              <p>
+                A local-first shopping budget PWA. Money is stored in integer minor units,
+                browser data is versioned, and barcode/OCR/image recognition can suggest a
+                value but cannot add it to the cart without confirmation.
               </p>
             </article>
           </div>
@@ -254,12 +286,12 @@
               <p>National Technical University “Kharkiv Polytechnic Institute” · Sep 2026 — Present</p>
             </article>
             <article>
-              <h3>Master’s Degree · Accounting &amp; Auditing</h3>
-              <p>Mykolayiv National Agrarian University · 2007 — 2012</p>
-            </article>
-            <article>
               <h3>Junior Specialist · Agronomy</h3>
               <p>Novy Buh Agrarian College · 2016 — 2019</p>
+            </article>
+            <article>
+              <h3>Master’s Degree · Accounting &amp; Auditing</h3>
+              <p>Mykolayiv National Agrarian University · 2007 — 2012</p>
             </article>
           </div>
           <p class="training">
@@ -277,7 +309,7 @@
         </section>
 
         <footer class="cv-footer">
-          <span>Mykola Dotsenko · Software Engineer</span>
+          <span>Mykola Dotsenko · docnikolaj1990@gmail.com</span>
           <span>Python/Django · Backend · Data Integrations</span>
         </footer>
       </article>

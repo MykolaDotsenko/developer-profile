@@ -1,0 +1,16 @@
+{
+  "name": "developer-profile",
+  "private": true,
+  "description": "Checks and browser tests for the static portfolio. The site itself has no build step.",
+  "scripts": {
+    "check": "python3 scripts/check_site.py",
+    "validate": "html-validate index.html resume.html 404.html",
+    "test": "playwright test",
+    "social-preview": "node scripts/render_social_preview.js"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.13.0",
+    "@playwright/test": "1.56.1",
+    "html-validate": "9.7.1"
+  }
+}

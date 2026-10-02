@@ -5,6 +5,7 @@ Recruiter-facing portfolio and print-ready CV for my software engineering work.
 **Live:** https://mykoladotsenko.github.io/developer-profile/
 
 [Resume](https://mykoladotsenko.github.io/developer-profile/resume.html) ·
+[Email](mailto:docnikolaj1990@gmail.com) ·
 [LinkedIn](https://www.linkedin.com/in/mykola-dotsenko/) ·
 [GitHub](https://github.com/MykolaDotsenko)
 
@@ -22,13 +23,15 @@ At Bo, my work includes CRM and property-data integrations, search, document flo
 
 Before software I worked across agriculture, greenhouse and food production, accounting, sales and customer-facing operations.
 
+**Languages:** English (C1) · Finnish (A1–A2) · Ukrainian (native)
+
 ## Selected projects
 
 The site intentionally shows a small set of projects that demonstrate different engineering problems rather than every repository I have built.
 
 | Project | Stack | Why it is here |
 | --- | --- | --- |
-| [Cultural Currency Converter](https://github.com/MykolaDotsenko/cultural-currency-converter) | Python · Django · PostgreSQL · HTMX | Current/historical FX semantics, external providers, provenance and graceful degradation |
+| [Cultural Currency Converter](https://github.com/MykolaDotsenko/cultural-currency-converter) | Python · Django · PostgreSQL · HTMX · Redis | Current/historical FX semantics, external providers, provenance and graceful degradation |
 | [DomoNest](https://github.com/MykolaDotsenko/domonest) | Python · Django · Wagtail · PostgreSQL | Cross-feature household workflows, database constraints and derived state |
 | [Turku Departures](https://github.com/MykolaDotsenko/foli-live-departures) | React · GTFS/SIRI · PWA | Realtime vs scheduled data, stale states, GPS edge cases and offline use |
 | [JunaLippu](https://github.com/MykolaDotsenko/JunaLippu) | Next.js · TypeScript · tRPC · Prisma | Segment-aware inventory and race-safe booking protected at the database boundary |
@@ -39,15 +42,14 @@ Additional examples include [RPS League — Reaktor](https://github.com/MykolaDo
 
 ## This site
 
-The portfolio is deliberately plain **HTML + CSS**. It does not need a frontend framework or client-side application runtime.
+The portfolio is plain **HTML + CSS** with one small, optional script. It does not need a frontend framework or build step, and every section reads the same with JavaScript turned off.
 
-The repository also contains:
-
-- a separate two-page print-ready resume;
-- responsive and print styles;
-- social-preview assets;
-- static link/file validation;
-- GitHub Actions checks for HTML and repository references.
+- **Light and dark themes** — follows the system setting, with a toggle that remembers the choice.
+- **Motion with restraint** — the knot draws itself, sections ease in, the impact numbers count up. All of it is skipped under `prefers-reduced-motion`.
+- **Interactive reconciliation demo** — four illustrative records from Kivi, OviPro and HubSpot are normalised, matched and merged step by step, and the ambiguous one goes to review. The data is made up.
+- **Two-page print-ready resume** — A4, checked by a test so it never spills onto a third page.
+- **Self-hosted assets** — the Fraunces display font (SIL OFL, see `assets/fonts/OFL.txt`) and all images live in `assets/`, so the site makes no third-party requests.
+- **Social preview** — `social-preview.png` is rendered from the same font and portrait with `npm run social-preview`.
 
 ## Local preview
 
@@ -55,23 +57,26 @@ The repository also contains:
 python -m http.server 8000
 ```
 
-Open:
-
-```text
-http://127.0.0.1:8000/
-```
-
-Resume:
-
-```text
-http://127.0.0.1:8000/resume.html
-```
+Open http://127.0.0.1:8000/ for the portfolio and http://127.0.0.1:8000/resume.html for the resume.
 
 ## Checks
+
+Static checks (Python standard library only): local links and anchors, image dimensions, truncated or corrupted PNG/WebP files, unused assets, undefined CSS custom properties, and `target="_blank"` links.
 
 ```bash
 python scripts/check_site.py
 ```
+
+HTML validation and browser tests (Playwright, Chromium, axe-core):
+
+```bash
+npm ci
+npx playwright install chromium
+npm run validate
+npm test
+```
+
+The browser tests cover layout at phone to desktop widths, both themes, reduced motion, JavaScript turned off, the reconciliation demo, accessibility (axe), and the two-page print layout. GitHub Actions runs all of it on every push and pull request.
 
 ## Author
 

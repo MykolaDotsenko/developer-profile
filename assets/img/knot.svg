@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="none" role="img" aria-labelledby="title desc">
-  <title id="title">Celtic Data Knot</title>
-  <desc id="desc">A geometric interlaced knot combining Celtic linework with four data nodes.</desc>
+  <title id="title">Two-systems knot</title>
+  <desc id="desc">Two interlaced loops, one for each system, joined by four data nodes where their records meet.</desc>
 
   <g stroke-linecap="round" stroke-linejoin="round">
     <path

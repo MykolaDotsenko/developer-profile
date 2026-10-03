@@ -480,6 +480,11 @@ h3 {
   transform: translateY(1px);
 }
 
+.button:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
 .button:hover::after {
   transform: translate(2px, -2px);
 }
@@ -496,6 +501,14 @@ h3 {
 
 .button-secondary::after {
   content: "→";
+}
+
+.button-download::after {
+  content: "↓";
+}
+
+.button-download:hover::after {
+  transform: translateY(2px);
 }
 
 .button-secondary:hover {
@@ -525,6 +538,7 @@ h3 {
 
 .hero {
   position: relative;
+  isolation: isolate;
   overflow: clip;
   padding: clamp(2.4rem, 5vw, 4rem) 0 clamp(2.4rem, 4.5vw, 3.6rem);
   border-bottom: 1px solid var(--rule-strong);
@@ -544,13 +558,10 @@ h3 {
   max-width: 760px;
 }
 
+/* Uppercase monospace is reserved for section-level kickers; smaller labels use the body face. */
 .eyebrow,
 .section-kicker,
-.profile-label,
 .project-type,
-.timeline-date,
-.proof-kicker,
-.more-work-label,
 .recon-kicker {
   margin: 0 0 0.42rem;
   color: var(--accent);
@@ -559,6 +570,17 @@ h3 {
   font-weight: 700;
   letter-spacing: 0.075em;
   text-transform: uppercase;
+}
+
+.profile-label,
+.timeline-date,
+.proof-kicker,
+.more-work-label {
+  margin: 0 0 0.42rem;
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
 }
 
 .hero-statement {
@@ -620,27 +642,51 @@ h3 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 20%;
+  object-position: center 30%;
+  filter: saturate(0.9);
+  transition: filter 500ms ease;
 }
 
-.avatar-color {
+.avatar-frame:hover .avatar {
+  filter: saturate(1.06) contrast(1.02);
+}
+
+/* The large knot circles the portrait, behind everything else in the hero. */
+.hero-knot {
   position: absolute;
-  inset: 0;
-  opacity: 0;
-  transition: opacity 600ms ease;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  width: 230%;
+  max-width: none;
+  translate: -50% -50%;
+  opacity: 0.2;
+  pointer-events: none;
 }
 
-.avatar-frame:hover .avatar-color {
-  opacity: 1;
+.hero-knot-loop {
+  stroke-width: 0.9;
+}
+
+.hero-knot-loop-a {
+  stroke: var(--knot-a);
+}
+
+.hero-knot-loop-b {
+  stroke: var(--knot-b);
+}
+
+.hero-knot-node {
+  fill: var(--knot-b);
 }
 
 .seal {
   position: absolute;
-  right: -22px;
-  bottom: -22px;
+  right: -30px;
+  bottom: -30px;
   display: grid;
-  width: 78px;
-  height: 78px;
+  width: 100px;
+  height: 100px;
   place-items: center;
   border: 1px solid rgba(176, 138, 74, 0.6);
   border-radius: 50%;
@@ -649,8 +695,8 @@ h3 {
 }
 
 .seal-knot {
-  width: 60px;
-  height: 60px;
+  width: 78px;
+  height: 78px;
 }
 
 .knot-loop,
@@ -705,7 +751,7 @@ h3 {
 
 .profile-facts div {
   display: grid;
-  grid-template-columns: 84px minmax(0, 1fr);
+  grid-template-columns: 100px minmax(0, 1fr);
   gap: 0.6rem;
   border-top: 1px solid var(--rule);
   padding: 0.45rem 0;
@@ -713,10 +759,8 @@ h3 {
 
 .profile-facts dt {
   color: var(--accent);
-  font-family: var(--mono);
-  font-size: 0.64rem;
+  font-size: 0.76rem;
   font-weight: 700;
-  text-transform: uppercase;
 }
 
 .profile-facts dd {
@@ -963,17 +1007,21 @@ h3 {
   padding: 0.28rem 0;
 }
 
+/* Source cards are narrow: the label sits above the value so a whole email fits on one line. */
+.recon-record dl div {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+}
+
 .recon dt {
   color: var(--faint);
-  font-family: var(--mono);
-  font-size: 0.62rem;
+  font-size: 0.7rem;
   font-weight: 700;
-  text-transform: uppercase;
 }
 
 .recon dd {
   margin: 0;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
   color: var(--ink);
   font-family: var(--mono);
   font-size: 0.74rem;
@@ -1062,8 +1110,8 @@ h3 {
   place-items: center;
   margin: 0;
   color: var(--faint);
-  font-family: var(--mono);
-  font-size: 0.72rem;
+  font-size: 0.82rem;
+  font-style: italic;
   text-align: center;
   visibility: visible;
   opacity: 1;
@@ -1074,7 +1122,7 @@ h3 {
 
 .timeline-card {
   display: grid;
-  grid-template-columns: 145px minmax(0, 1fr);
+  grid-template-columns: 165px minmax(0, 1fr);
   gap: 1.4rem;
   border-top: 1px solid var(--rule-strong);
   padding: 1.05rem 0 1.15rem;
@@ -1162,12 +1210,12 @@ h3 {
 .speed-label,
 .speed-num {
   color: var(--muted);
-  font-family: var(--mono);
-  font-size: 0.66rem;
+  font-size: 0.72rem;
 }
 
 .speed-num {
   color: var(--ink);
+  font-family: var(--mono);
   text-align: right;
 }
 
@@ -1224,8 +1272,8 @@ h3 {
 
 .role-date {
   color: var(--faint);
-  font-family: var(--mono);
-  font-size: 0.7rem;
+  font-size: 0.78rem;
+  font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
 
@@ -1372,8 +1420,7 @@ h3 {
 .tag-list span {
   position: relative;
   color: var(--faint);
-  font-family: var(--mono);
-  font-size: 0.71rem;
+  font-size: 0.78rem;
 }
 
 .tag-list span:not(:last-child)::after {
@@ -1432,8 +1479,7 @@ h3 {
   justify-self: start;
   margin-top: 0.45rem;
   color: var(--faint);
-  font-family: var(--mono);
-  font-size: 0.66rem;
+  font-size: 0.76rem;
 }
 
 .project-proof {
@@ -1507,8 +1553,7 @@ h3 {
 
 .more-work-note {
   color: var(--faint);
-  font-family: var(--mono);
-  font-size: 0.67rem;
+  font-size: 0.78rem;
 }
 
 /* Skills */
@@ -1779,6 +1824,19 @@ h3 {
     animation-delay: 2400ms;
   }
 
+  .hero-knot-loop {
+    stroke-dasharray: 1;
+    animation: knot-draw 2600ms var(--ease-out) 300ms both;
+  }
+
+  .hero-knot-loop-b {
+    animation-delay: 700ms;
+  }
+
+  .hero-knot-node {
+    animation: fade-in 700ms ease 2600ms both;
+  }
+
   .motion [data-reveal] {
     opacity: 0;
     transform: translateY(18px);
@@ -1792,6 +1850,27 @@ h3 {
 
   .motion [data-impact]:not(.is-visible) .speed-bar {
     transform: scaleX(0);
+  }
+}
+
+/* Where the browser supports scroll-driven animation, the big knot turns as the page scrolls. */
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-knot {
+      animation: knot-turn linear both;
+      animation-timeline: scroll(root block);
+      animation-range: 0px 900px;
+    }
+  }
+}
+
+@keyframes knot-turn {
+  from {
+    rotate: 0deg;
+  }
+
+  to {
+    rotate: 80deg;
   }
 }
 
@@ -1995,15 +2074,15 @@ h3 {
   }
 
   .seal {
-    right: -16px;
-    bottom: -16px;
-    width: 66px;
-    height: 66px;
+    right: -18px;
+    bottom: -18px;
+    width: 80px;
+    height: 80px;
   }
 
   .seal-knot {
-    width: 50px;
-    height: 50px;
+    width: 62px;
+    height: 62px;
   }
 
   .section {

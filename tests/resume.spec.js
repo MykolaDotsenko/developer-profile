@@ -24,6 +24,15 @@ test.describe("resume page", () => {
     await expect(header).toContainText("Ukrainian (native)");
   });
 
+  test("links the downloadable PDF from the toolbar", async ({ page }) => {
+    await page.goto("resume.html");
+    const download = page.getByRole("link", { name: /Download PDF/ });
+
+    await expect(download).toHaveAttribute("href", "Mykola-Dotsenko-Resume.pdf");
+    await expect(download).toHaveAttribute("download", "");
+    expect(await page.evaluate(() => document.fonts.check('400 12px "Inter"'))).toBe(true);
+  });
+
   test("explains that the Nidos internship was part of BearIT LearnIT", async ({ page }) => {
     await page.goto("resume.html");
     await expect(page.locator(".job", { hasText: "Nidos Ltd." }).first()).toContainText("BearIT LearnIT");

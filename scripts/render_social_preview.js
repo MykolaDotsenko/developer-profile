@@ -121,7 +121,7 @@ const html = `<!DOCTYPE html>
         width: 100%;
         height: 100%;
         object-fit: cover;
-        object-position: center 20%;
+        object-position: center 30%;
       }
       .seal {
         position: absolute;
@@ -151,7 +151,7 @@ const html = `<!DOCTYPE html>
       <span>mykoladotsenko.github.io/developer-profile</span>
     </div>
     <div class="portrait">
-      <img src="${asset("assets/img/avatar-duotone.webp")}" alt="">
+      <img src="${asset("assets/img/portrait.webp")}" alt="">
       <span class="seal"><img src="${asset("assets/img/knot.svg")}" alt=""></span>
     </div>
   </body>

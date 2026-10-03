@@ -47,6 +47,31 @@ test.describe("portfolio page", () => {
     }
   });
 
+  test("experience comes right after the hero, before the demo", async ({ page }) => {
+    await page.goto("index.html");
+    const ids = await page.$$eval("main > section", (sections) => sections.map((section) => section.id));
+    expect(ids.slice(0, 3)).toEqual(["top", "experience", "about"]);
+
+    const navOrder = await page.$$eval(".primary-nav a", (links) => links.map((link) => link.hash.slice(1)));
+    const pageOrder = ids.filter((id) => navOrder.includes(id));
+    expect(navOrder).toEqual(pageOrder);
+  });
+
+  test("offers the resume as a two-page PDF download", async ({ page, request }) => {
+    await page.goto("index.html");
+    const links = page.locator("a[href='Mykola-Dotsenko-Resume.pdf']");
+    expect(await links.count()).toBeGreaterThanOrEqual(2);
+    for (const link of await links.all()) {
+      await expect(link).toHaveAttribute("download", "");
+    }
+
+    const response = await request.get("Mykola-Dotsenko-Resume.pdf");
+    expect(response.status()).toBe(200);
+    expect(response.headers()["content-type"]).toBe("application/pdf");
+    const pdf = (await response.body()).toString("latin1");
+    expect((pdf.match(/\/Type\s*\/Page[^s]/g) || []).length).toBe(2);
+  });
+
   test("project grid leaves no empty cell at desktop width", async ({ page }) => {
     await page.setViewportSize({ width: 1366, height: 900 });
     await page.goto("index.html");
@@ -203,6 +228,17 @@ test.describe("motion", () => {
     await expect(skills).toHaveCSS("opacity", "1", { timeout: 4000 });
   });
 
+  test("the large hero knot draws itself around the portrait", async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto("index.html");
+    const knot = page.locator(".hero-knot");
+    const portrait = page.getByRole("img", { name: /Portrait of Mykola Dotsenko/ });
+
+    const [knotBox, portraitBox] = await Promise.all([knot.boundingBox(), portrait.boundingBox()]);
+    expect(knotBox.width).toBeGreaterThan(portraitBox.width * 2);
+    await expect(page.locator(".hero-knot-loop-a")).toHaveCSS("stroke-dashoffset", "0px", { timeout: 5000 });
+  });
+
   test("the knot seal draws itself on load", async ({ page }) => {
     await page.goto("index.html");
     const loop = page.locator(".knot-loop-a");
@@ -249,20 +285,19 @@ test.describe("reduced motion", () => {
 });
 
 test.describe("reconciliation demo", () => {
-  test("normalises, matches, merges, and sends the conflict to review", async ({ page }) => {
+  test("runs step by step on click, then resets", async ({ page }) => {
     await page.goto("index.html");
     const demo = page.locator("[data-recon]");
     const kiviName = demo.locator(".recon-record").first().locator("dd").first();
     const golden = demo.locator("[data-recon-golden] dl");
-    const run = page.getByRole("button", { name: "Reconcile records" });
     const reset = page.getByRole("button", { name: "Reset" });
 
-    await demo.scrollIntoViewIfNeeded();
+    // Checked before the demo is scrolled into view, so autoplay has not started yet.
     await expect(kiviName).toHaveText("VIRTANEN Aino");
     await expect(golden).toBeHidden();
     await expect(reset).toBeHidden();
 
-    await run.click();
+    await page.getByRole("button", { name: "Reconcile records" }).click();
     await expect(demo.locator("[data-recon-status]")).toContainText("Normalise", { timeout: 3000 });
     await expect(kiviName).toHaveText("Aino Virtanen");
 
@@ -279,7 +314,55 @@ test.describe("reconciliation demo", () => {
     await expect(kiviName).toHaveText("VIRTANEN Aino");
     await expect(golden).toBeHidden();
     await expect(demo.locator(".recon-record.is-matched")).toHaveCount(0);
+
+    // Autoplay is a one-time introduction; it never restarts after the visitor resets.
+    await page.waitForTimeout(1500);
+    await expect(kiviName).toHaveText("VIRTANEN Aino");
   });
+
+  test("plays once by itself, in under five seconds, when it first scrolls into view", async ({ page }) => {
+    await page.goto("index.html");
+    const demo = page.locator("[data-recon]");
+
+    await demo.scrollIntoViewIfNeeded();
+    await expect(demo.locator("[data-recon-status]")).toContainText("Normalise", { timeout: 3000 });
+    const started = Date.now();
+    await expect(page.getByRole("button", { name: "Reset" })).toBeVisible({ timeout: 6000 });
+    // WCAG 2.2.2: motion that starts by itself must stop within five seconds.
+    expect(Date.now() - started).toBeLessThan(5000);
+    await expect(demo.locator(".recon-steps .is-done")).toHaveCount(4);
+  });
+
+  test("does not autoplay under reduced motion", async ({ browser }) => {
+    const context = await browser.newContext({ reducedMotion: "reduce" });
+    const page = await context.newPage();
+    await page.goto("index.html");
+    const demo = page.locator("[data-recon]");
+
+    await demo.scrollIntoViewIfNeeded();
+    await page.waitForTimeout(2000);
+    await expect(demo.locator(".recon-record").first().locator("dd").first()).toHaveText("VIRTANEN Aino");
+    await expect(page.getByRole("button", { name: "Reconcile records" })).toBeVisible();
+    await context.close();
+  });
+
+  for (const width of [390, 1024, 1366]) {
+    test(`source cards show each email on one line at ${width}px`, async ({ page }) => {
+      await page.setViewportSize({ width, height: 900 });
+      await page.goto("index.html");
+
+      const lineCounts = await page.$$eval(".recon-record dd", (values) =>
+        values
+          .filter((value) => value.textContent.includes("@"))
+          .map((value) => {
+            const lineHeight = parseFloat(getComputedStyle(value).lineHeight);
+            return Math.round(value.getBoundingClientRect().height / lineHeight);
+          }),
+      );
+      expect(lineCounts.length).toBe(4);
+      expect(lineCounts).toEqual([1, 1, 1, 1]);
+    });
+  }
 });
 
 test.describe("without JavaScript", () => {

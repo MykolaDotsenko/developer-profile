@@ -6,6 +6,15 @@
   src: url("assets/fonts/fraunces-latin-opsz-normal.woff2") format("woff2");
 }
 
+/* A bundled body face keeps the screen view and the generated PDF identical on every machine. */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("assets/fonts/inter-latin-wght-normal.woff2") format("woff2");
+}
+
 :root {
   color-scheme: light;
 
@@ -19,7 +28,7 @@
   --accent: #7f3b2b;
 
   --serif: "Fraunces", "Iowan Old Style", Baskerville, Georgia, serif;
-  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
 
   --page-width: 210mm;
@@ -164,6 +173,20 @@ h3 {
 
 .toolbar-actions span {
   color: var(--muted);
+}
+
+.toolbar-actions .toolbar-download {
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+  padding: 0.3rem 0.65rem;
+  text-decoration: none;
+}
+
+.toolbar-actions .toolbar-download:hover {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--paper);
 }
 
 /* Pages */

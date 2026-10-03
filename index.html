@@ -48,7 +48,7 @@
         "jobTitle": "Software Engineer",
         "email": "mailto:docnikolaj1990@gmail.com",
         "url": "https://mykoladotsenko.github.io/developer-profile/",
-        "image": "https://mykoladotsenko.github.io/developer-profile/assets/img/avatar-color.webp",
+        "image": "https://mykoladotsenko.github.io/developer-profile/assets/img/portrait.webp",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Turku",
@@ -96,8 +96,8 @@
         </a>
 
         <nav class="primary-nav" aria-label="Primary navigation">
-          <a href="#about">About</a>
           <a href="#experience">Experience</a>
+          <a href="#about">About</a>
           <a href="#projects">Projects</a>
           <a href="#skills">Skills</a>
         </nav>
@@ -138,6 +138,7 @@
             <div class="hero-actions hero-step" role="group" aria-label="Primary actions">
               <a class="button" href="#projects">View selected work</a>
               <a class="button button-secondary" href="resume.html">Resume</a>
+              <a class="text-link" href="Mykola-Dotsenko-Resume.pdf" download>PDF ↓</a>
               <a class="text-link" href="mailto:docnikolaj1990@gmail.com">Email</a>
               <a
                 class="text-link"
@@ -160,21 +161,30 @@
 
           <aside class="profile-card hero-step" aria-label="Profile summary">
             <div class="avatar-frame">
+              <svg class="hero-knot" viewBox="0 0 160 160" aria-hidden="true" focusable="false">
+                <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    class="hero-knot-loop hero-knot-loop-a"
+                    pathLength="1"
+                    d="M80 18C104 18 116 32 116 50C116 66 104 74 88 80C104 86 116 94 116 110C116 128 104 142 80 142C56 142 44 128 44 110C44 94 56 86 72 80C56 74 44 66 44 50C44 32 56 18 80 18Z"/>
+                  <path
+                    class="hero-knot-loop hero-knot-loop-b"
+                    pathLength="1"
+                    d="M18 80C18 56 32 44 50 44C66 44 74 56 80 72C86 56 94 44 110 44C128 44 142 56 142 80C142 104 128 116 110 116C94 116 86 104 80 88C74 104 66 116 50 116C32 116 18 104 18 80Z"/>
+                </g>
+                <circle class="hero-knot-node" cx="80" cy="18" r="2.2"/>
+                <circle class="hero-knot-node" cx="142" cy="80" r="2.2"/>
+                <circle class="hero-knot-node" cx="80" cy="142" r="2.2"/>
+                <circle class="hero-knot-node" cx="18" cy="80" r="2.2"/>
+              </svg>
+
               <img
                 class="avatar"
-                src="assets/img/avatar-duotone.webp"
-                alt="Portrait of Mykola Dotsenko"
-                width="720"
-                height="900"
+                src="assets/img/portrait.webp"
+                alt="Portrait of Mykola Dotsenko in a greenhouse"
+                width="600"
+                height="750"
                 fetchpriority="high">
-              <img
-                class="avatar avatar-color"
-                src="assets/img/avatar-color.webp"
-                alt=""
-                width="720"
-                height="900"
-                loading="lazy"
-                decoding="async">
 
               <span class="seal" aria-hidden="true">
                 <svg class="seal-knot" viewBox="0 0 160 160" focusable="false">
@@ -227,7 +237,131 @@
         </div>
       </section>
 
-      <section class="section" id="about">
+      <section class="section" id="experience">
+        <div class="container">
+          <div class="section-heading" data-reveal>
+            <div>
+              <p class="section-kicker">Experience</p>
+              <h2>What I do at work</h2>
+            </div>
+          </div>
+
+          <article class="timeline-card" data-reveal>
+            <div class="timeline-meta">
+              <p class="timeline-date">May 2025 — Present</p>
+              <p>Finland</p>
+            </div>
+
+            <div>
+              <h3>Software Developer · Techco / Bo</h3>
+              <p class="timeline-summary">
+                Most of my current work is in the Bo product: Django backend, CRM and
+                property data, external integrations, search, document flows, and the UI
+                around them.
+              </p>
+
+              <div class="impact-grid" data-impact>
+                <figure class="impact-tile">
+                  <p class="impact-value">
+                    <span data-count-to="200" data-count-prefix="~" data-count-suffix="k">~200k</span>
+                  </p>
+                  <figcaption>CRM/contact records reconciled across Kivi, OviPro, and HubSpot</figcaption>
+                </figure>
+
+                <figure class="impact-tile">
+                  <p class="impact-value">3.5s → ~300ms</p>
+                  <div
+                    class="speed-chart"
+                    role="img"
+                    aria-label="One search path: 3.5 seconds before, about 300 milliseconds after">
+                    <div class="speed-row">
+                      <span class="speed-label">Before</span>
+                      <span class="speed-track"><span class="speed-bar speed-bar-before"></span></span>
+                      <span class="speed-num">3.5s</span>
+                    </div>
+                    <div class="speed-row">
+                      <span class="speed-label">After</span>
+                      <span class="speed-track"><span class="speed-bar speed-bar-after"></span></span>
+                      <span class="speed-num">0.3s</span>
+                    </div>
+                  </div>
+                  <figcaption>One search path after reworking queries, loading, and caching</figcaption>
+                </figure>
+
+                <figure class="impact-tile">
+                  <p class="impact-value">
+                    <span data-count-to="1600" data-count-prefix="~">~1,600</span>
+                  </p>
+                  <figcaption>Duplicate assignment records resolved, with stricter ingestion rules</figcaption>
+                </figure>
+              </div>
+
+              <ul class="bullet-list impact-list">
+                <li>
+                  Built CRM reconciliation around <strong>~200k contacts</strong> across
+                  Kivi, OviPro, and HubSpot. Ambiguous identity matches go to review instead
+                  of being merged automatically.
+                </li>
+                <li>
+                  Cut one search path from <strong>3.5s to ~300ms</strong> by changing
+                  the query structure, relationship loading, candidate limits, and caching.
+                </li>
+                <li>
+                  Cleaned up <strong>~1,600 duplicate assignment records</strong> and
+                  tightened the ingestion rules so the same problem would not simply return
+                  on the next sync.
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-card timeline-card-secondary" data-reveal>
+            <div class="timeline-meta">
+              <p class="timeline-date">2023 — 2025</p>
+              <p>Earlier software roles</p>
+            </div>
+
+            <div>
+              <h3>Duotone · BearIT / Nidos · Freelance</h3>
+              <ul class="role-list">
+                <li>
+                  <span class="role-name">Software Developer · Duotone</span>
+                  <span class="role-date">Feb — May 2025</span>
+                  <span class="role-note">Next.js and TypeScript SaaS features, PostgreSQL/Supabase workflows, search prototypes.</span>
+                </li>
+                <li>
+                  <span class="role-name">Trainee · BearIT LearnIT, incl. internship at Nidos Ltd.</span>
+                  <span class="role-date">Mar — Nov 2024</span>
+                  <span class="role-note">Full-stack Next.js/tRPC/Prisma training; at Nidos, React CRM screens with Playwright E2E tests.</span>
+                </li>
+                <li>
+                  <span class="role-name">Frontend Developer · Upwork</span>
+                  <span class="role-date">Jul 2023 — Mar 2024</span>
+                  <span class="role-note">React interfaces and REST API integrations for freelance clients.</span>
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-card timeline-card-secondary" data-reveal>
+            <div class="timeline-meta">
+              <p class="timeline-date">Before software</p>
+              <p>Business &amp; operations</p>
+            </div>
+
+            <div>
+              <h3>Agriculture, sales, accounting, and production</h3>
+              <p class="timeline-summary">
+                Before software I spent more than eight years around agriculture,
+                greenhouse and food production, accounting, sales, and customer work.
+                That is useful context when software has to fit an actual business process.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-muted" id="about">
         <div class="container">
           <div class="section-grid">
             <div data-reveal>
@@ -401,130 +535,6 @@
               </article>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section class="section section-muted" id="experience">
-        <div class="container">
-          <div class="section-heading" data-reveal>
-            <div>
-              <p class="section-kicker">Experience</p>
-              <h2>What I do at work</h2>
-            </div>
-          </div>
-
-          <article class="timeline-card" data-reveal>
-            <div class="timeline-meta">
-              <p class="timeline-date">May 2025 — Present</p>
-              <p>Finland</p>
-            </div>
-
-            <div>
-              <h3>Software Developer · Techco / Bo</h3>
-              <p class="timeline-summary">
-                Most of my current work is in the Bo product: Django backend, CRM and
-                property data, external integrations, search, document flows, and the UI
-                around them.
-              </p>
-
-              <div class="impact-grid" data-impact>
-                <figure class="impact-tile">
-                  <p class="impact-value">
-                    <span data-count-to="200" data-count-prefix="~" data-count-suffix="k">~200k</span>
-                  </p>
-                  <figcaption>CRM/contact records reconciled across Kivi, OviPro, and HubSpot</figcaption>
-                </figure>
-
-                <figure class="impact-tile">
-                  <p class="impact-value">3.5s → ~300ms</p>
-                  <div
-                    class="speed-chart"
-                    role="img"
-                    aria-label="One search path: 3.5 seconds before, about 300 milliseconds after">
-                    <div class="speed-row">
-                      <span class="speed-label">Before</span>
-                      <span class="speed-track"><span class="speed-bar speed-bar-before"></span></span>
-                      <span class="speed-num">3.5s</span>
-                    </div>
-                    <div class="speed-row">
-                      <span class="speed-label">After</span>
-                      <span class="speed-track"><span class="speed-bar speed-bar-after"></span></span>
-                      <span class="speed-num">0.3s</span>
-                    </div>
-                  </div>
-                  <figcaption>One search path after reworking queries, loading, and caching</figcaption>
-                </figure>
-
-                <figure class="impact-tile">
-                  <p class="impact-value">
-                    <span data-count-to="1600" data-count-prefix="~">~1,600</span>
-                  </p>
-                  <figcaption>Duplicate assignment records resolved, with stricter ingestion rules</figcaption>
-                </figure>
-              </div>
-
-              <ul class="bullet-list impact-list">
-                <li>
-                  Built CRM reconciliation around <strong>~200k contacts</strong> across
-                  Kivi, OviPro, and HubSpot. Ambiguous identity matches go to review instead
-                  of being merged automatically.
-                </li>
-                <li>
-                  Cut one search path from <strong>3.5s to ~300ms</strong> by changing
-                  the query structure, relationship loading, candidate limits, and caching.
-                </li>
-                <li>
-                  Cleaned up <strong>~1,600 duplicate assignment records</strong> and
-                  tightened the ingestion rules so the same problem would not simply return
-                  on the next sync.
-                </li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="timeline-card timeline-card-secondary" data-reveal>
-            <div class="timeline-meta">
-              <p class="timeline-date">2023 — 2025</p>
-              <p>Earlier software roles</p>
-            </div>
-
-            <div>
-              <h3>Duotone · BearIT / Nidos · Freelance</h3>
-              <ul class="role-list">
-                <li>
-                  <span class="role-name">Software Developer · Duotone</span>
-                  <span class="role-date">Feb — May 2025</span>
-                  <span class="role-note">Next.js and TypeScript SaaS features, PostgreSQL/Supabase workflows, search prototypes.</span>
-                </li>
-                <li>
-                  <span class="role-name">Trainee · BearIT LearnIT, incl. internship at Nidos Ltd.</span>
-                  <span class="role-date">Mar — Nov 2024</span>
-                  <span class="role-note">Full-stack Next.js/tRPC/Prisma training; at Nidos, React CRM screens with Playwright E2E tests.</span>
-                </li>
-                <li>
-                  <span class="role-name">Frontend Developer · Upwork</span>
-                  <span class="role-date">Jul 2023 — Mar 2024</span>
-                  <span class="role-note">React interfaces and REST API integrations for freelance clients.</span>
-                </li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="timeline-card timeline-card-secondary" data-reveal>
-            <div class="timeline-meta">
-              <p class="timeline-date">Before software</p>
-              <p>Business &amp; operations</p>
-            </div>
-
-            <div>
-              <h3>Agriculture, sales, accounting, and production</h3>
-              <p class="timeline-summary">
-                Before software I spent more than eight years around agriculture,
-                greenhouse and food production, accounting, sales, and customer work.
-                That is useful context when software has to fit an actual business process.
-              </p>
-            </div>
-          </article>
         </div>
       </section>
 
@@ -854,6 +864,7 @@
 
           <div class="contact-actions">
             <a class="button" href="mailto:docnikolaj1990@gmail.com">Email me</a>
+            <a class="button button-secondary button-download" href="Mykola-Dotsenko-Resume.pdf" download>Resume PDF</a>
             <a
               class="button button-secondary"
               href="https://www.linkedin.com/in/mykola-dotsenko/"

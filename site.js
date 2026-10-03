@@ -205,7 +205,7 @@ function initReconciliation(demo) {
     reset.hidden = true;
   };
 
-  run.addEventListener("click", () => {
+  const play = () => {
     setIdle();
     run.disabled = true;
     const stepDelay = reducedMotion.matches ? 0 : 1150;
@@ -225,9 +225,39 @@ function initReconciliation(demo) {
         }, stepDelay * index + (stepDelay ? 250 : 0)),
       );
     });
+  };
+
+  // Play once by itself the first time the demo scrolls into view (under 5 seconds, so it
+  // needs no pause control). Never under reduced motion, and never after the visitor acts.
+  let autoplay = null;
+  let autoplayTimer;
+  const cancelAutoplay = () => {
+    clearTimeout(autoplayTimer);
+    autoplay?.disconnect();
+  };
+
+  if (!reducedMotion.matches && "IntersectionObserver" in window) {
+    autoplay = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          autoplay.disconnect();
+          autoplayTimer = setTimeout(play, 500);
+        }
+      },
+      { rootMargin: "0px 0px -40% 0px" },
+    );
+    autoplay.observe(demo);
+  }
+
+  run.addEventListener("click", () => {
+    cancelAutoplay();
+    play();
   });
 
-  reset.addEventListener("click", setIdle);
+  reset.addEventListener("click", () => {
+    cancelAutoplay();
+    setIdle();
+  });
 
   run.hidden = false;
   setIdle();

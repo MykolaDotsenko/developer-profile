@@ -1,10 +1,12 @@
-"""Static checks for the portfolio: links, anchors, images, image files, assets, and CSS variables.
+"""Static checks for the portfolio: links, anchors, images, image files, assets, CSS variables,
+and the downloadable resume PDF.
 
 Uses only the Python standard library so it runs anywhere CI has Python.
 """
 
 from __future__ import annotations
 
+import hashlib
 import re
 import struct
 import zlib
@@ -19,9 +21,20 @@ SITE_PATH = "/developer-profile/"
 HTML_PATHS = sorted(ROOT.glob("*.html"))
 CSS_PATHS = sorted(ROOT.glob("*.css"))
 TEXT_SOURCES = HTML_PATHS + CSS_PATHS + sorted(ROOT.glob("*.js")) + [ROOT / "README.md"]
-ASSET_SUFFIXES = {".png", ".jpg", ".jpeg", ".webp", ".svg", ".woff2", ".txt"}
+ASSET_SUFFIXES = {".png", ".jpg", ".jpeg", ".webp", ".svg", ".woff2", ".txt", ".pdf"}
 ASSET_IGNORES = {"sitemap.xml"}
 SKIPPED_DIRS = {".git", "node_modules", "test-results", "playwright-report"}
+
+RESUME_PDF = ROOT / "Mykola-Dotsenko-Resume.pdf"
+RESUME_PDF_HASH = ROOT / "scripts" / "resume-pdf.sha256"
+# Keep in sync with INPUTS in scripts/render_resume_pdf.js.
+RESUME_PDF_INPUTS = [
+    "resume.html",
+    "resume.css",
+    "assets/fonts/fraunces-latin-opsz-normal.woff2",
+    "assets/fonts/inter-latin-wght-normal.woff2",
+    "scripts/render_resume_pdf.js",
+]
 
 CSS_DEFINITION = re.compile(r"(--[\w-]+)\s*:")
 CSS_USAGE = re.compile(r"var\(\s*(--[\w-]+)")
@@ -204,11 +217,45 @@ def check_image_files() -> list[str]:
     return errors
 
 
+def resume_pdf_source_hash() -> str:
+    digest = hashlib.sha256()
+    for relative in RESUME_PDF_INPUTS:
+        digest.update(relative.encode())
+        digest.update(b"\0")
+        digest.update((ROOT / relative).read_bytes())
+        digest.update(b"\0")
+    return digest.hexdigest()
+
+
+def check_resume_pdf() -> list[str]:
+    """The PDF must exist, have two pages, and be rebuilt whenever its sources change."""
+
+    name = RESUME_PDF.name
+    if not RESUME_PDF.exists():
+        return [f"{name}: missing; run npm run resume-pdf"]
+
+    data = RESUME_PDF.read_bytes()
+    errors: list[str] = []
+    if not data.startswith(b"%PDF-") or b"%%EOF" not in data[-1024:]:
+        errors.append(f"{name}: not a complete PDF file")
+
+    pages = len(re.findall(rb"/Type\s*/Page[^s]", data))
+    if pages != 2:
+        errors.append(f"{name}: expected 2 pages, found {pages}")
+
+    recorded = RESUME_PDF_HASH.read_text().strip() if RESUME_PDF_HASH.exists() else ""
+    if recorded != resume_pdf_source_hash():
+        errors.append(f"{name}: out of date with resume.html/resume.css; run npm run resume-pdf")
+
+    return errors
+
+
 def main() -> int:
     errors = [error for path in HTML_PATHS for error in check_html(path)]
     errors += [error for path in CSS_PATHS for error in check_css(path)]
     errors += check_unused_assets()
     errors += check_image_files()
+    errors += check_resume_pdf()
 
     if errors:
         print("Site checks failed:")
@@ -218,7 +265,7 @@ def main() -> int:
 
     print(
         f"Site checks passed: {len(HTML_PATHS)} HTML pages, {len(CSS_PATHS)} stylesheets, "
-        "links, anchors, images, image files, assets, and CSS variables.",
+        "links, anchors, images, image files, assets, CSS variables, and the resume PDF.",
     )
     return 0
 
